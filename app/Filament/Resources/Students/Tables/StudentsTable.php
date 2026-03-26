@@ -40,8 +40,8 @@ class StudentsTable
                     ->label('E-pasta adrese')
                     ->searchable(),
 
-                TextColumn::make('category.name')
-                    ->label('Kategorija')
+                TextColumn::make('categories.name')
+                    ->label('Kategorijas')
                     ->searchable(),
 
                 TextColumn::make('created_at')

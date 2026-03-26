@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Student extends Model
 {
@@ -15,4 +16,10 @@ class Student extends Model
         'email',
         'category_id'
     ];
+
+    public function categories() {
+        return $this->belongsToMany(Category::class);
+    }
+
+
 }

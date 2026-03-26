@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Student;
 
 class Category extends Model
 {
@@ -10,4 +11,8 @@ class Category extends Model
         'name',
         'description'
     ];
+
+    public function students() {
+        return $this->belongsToMany(Student::class);
+    }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\Students\Schemas;
 
+use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Filament\Support\Enums\GridDirection;
 
 class StudentForm
 {
@@ -42,10 +44,13 @@ class StudentForm
                     ->email()
                     ->required(),
 
-                TextInput::make('category_id')
-                    ->label('Kategorija')
+                CheckboxList::make('categories')
+                    ->label('Kategorijas')
+                    ->relationship(name: 'categories', titleAttribute: 'name')
                     ->required()
-                    ->numeric(),
+                    ->columns(2)
+                    ->columnSpanFull()
+                    ->gridDirection(GridDirection::Row),
             ]);
     }
 }
