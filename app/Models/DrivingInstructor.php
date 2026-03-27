@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class DrivingInstructor extends Model
 {
@@ -21,4 +22,8 @@ class DrivingInstructor extends Model
         'vehicle',
         'description'
     ]; 
+
+    public function categories() {
+        return $this->belongsToMany(Category::class);
+    }
 }
