@@ -2,10 +2,13 @@
 
 namespace App\Filament\Resources\Students\Schemas;
 
+
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\GridDirection;
+use Illuminate\Database\Eloquent\Builder;
 
 class StudentForm
 {
@@ -51,6 +54,18 @@ class StudentForm
                     ->columns(2)
                     ->columnSpanFull()
                     ->gridDirection(GridDirection::Row),
+
+                Select::make('groups')
+                    ->label('Grupas')
+                    ->relationship(
+                        name: 'group',
+                        titleAttribute: 'name',
+                        modifyQueryUsing: fn (Builder $query) => $query->where('start_date', '>', now())
+                    )
+                    ->multiple()
+                    ->required()
+                    ->columns(2)
+                    ->columnSpanFull(),
             ]);
     }
 }

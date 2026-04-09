@@ -27,7 +27,6 @@ class GroupForm
 
                 DatePicker::make('start_date')
                     ->label('Sākuma datums')
-                    ->maxDate(now())
                     ->required(),
 
                 DatePicker::make('end_date')
