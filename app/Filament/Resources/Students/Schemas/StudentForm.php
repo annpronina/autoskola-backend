@@ -45,7 +45,8 @@ class StudentForm
                 TextInput::make('email')
                     ->label('E-pasta adrese')
                     ->email()
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
 
                 CheckboxList::make('categories')
                     ->label('Kategorijas')

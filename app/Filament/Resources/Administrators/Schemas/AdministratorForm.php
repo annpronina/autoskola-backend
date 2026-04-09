@@ -13,29 +13,35 @@ class AdministratorForm
             ->components([
                 TextInput::make('name')
                     ->label('Vārds')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
 
                 TextInput::make('surname')
                     ->label('Uzvārds')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
 
                 TextInput::make('personal_code')
                     ->label('Personas kods')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
 
                 TextInput::make('email')
                     ->label('E-pasta adrese')
                     ->email()
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
 
                 TextInput::make('phone')
                     ->label('Telefons')
                     ->tel()
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
 
                 TextInput::make('address')
                     ->label('Adrese')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
 
                 TextInput::make('position')
                     ->label('Pozīcija')

@@ -21,7 +21,7 @@ class GroupForm
 
                 Textarea::make('description')
                     ->label('Apraksts')
-                    ->required()
+                    ->rows(4)
                     ->maxLength(255)
                     ->columnSpanFull(),
 

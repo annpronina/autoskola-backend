@@ -21,7 +21,8 @@ class CategoryForm
                     ->label('Apraksts')
                     ->rows(4)
                     ->required()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->maxLength(255),
             ]);
     }
 }
