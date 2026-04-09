@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Student;
 use App\Models\DrivingInstructor;
 use App\Models\TheoryTeacher;
+use App\Models\Group;
+
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
@@ -24,5 +27,9 @@ class Category extends Model
 
     public function theoryTeachers() {
         return $this->belongsToMany(TheoryTeacher::class);
+    }
+
+    public function groups() {
+        return $this->HasMany(Group::class);
     }
 }

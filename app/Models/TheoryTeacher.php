@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
+use App\Models\Group;
 
 class TheoryTeacher extends Model
 {
@@ -20,5 +22,9 @@ class TheoryTeacher extends Model
 
     public function categories() {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function groups() {
+        return $this->hasMany(Group::class);
     }
 }

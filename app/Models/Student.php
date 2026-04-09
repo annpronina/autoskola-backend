@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
+use App\Models\Group;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Student extends Model
 {
@@ -21,5 +23,8 @@ class Student extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function group() {
+        return $this->belongsToMany(Group::class);
+    }
 
 }

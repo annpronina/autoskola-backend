@@ -25,7 +25,7 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationLabel = 'Kategorijas';
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 2;
 
     public static function getNavigationGroup(): ?string
     {
