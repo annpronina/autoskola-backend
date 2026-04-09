@@ -50,6 +50,8 @@ class DrivingInstructorForm
                 DatePicker::make('registered_since')
                     ->label('Instruktors kopš')
                     ->required()
+                    ->native(false)
+                    ->displayFormat('d/m/Y')
                     ->maxDate(now()),
 
                 TextInput::make('vehicle')

@@ -43,6 +43,8 @@ class TheoryTeacherForm
 
                 DatePicker::make('registered_since')
                     ->label('Pasniedz kopš')
+                    ->native(false)
+                    ->displayFormat('d/m/Y')
                     ->required(),
 
                 CheckboxList::make('categories')

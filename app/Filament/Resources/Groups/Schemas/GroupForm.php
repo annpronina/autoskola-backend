@@ -27,11 +27,15 @@ class GroupForm
 
                 DatePicker::make('start_date')
                     ->label('Sākuma datums')
+                    ->native(false)
+                    ->displayFormat('d/m/Y')
                     ->required(),
 
                 DatePicker::make('end_date')
                     ->label('Beigu datums')
                     ->after('start_date')
+                    ->native(false)
+                    ->displayFormat('d/m/Y')
                     ->required(),
 
                 Select::make('category_id')
