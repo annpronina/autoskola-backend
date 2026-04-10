@@ -33,9 +33,28 @@ class GroupsTable
                     ->numeric()
                     ->sortable(),
 
-                TextColumn::make('theoryTeacher.name')
+                TextColumn::make('theoryTeacher.full_name')
                     ->label('Teorijas pasniedzējs')
                     ->numeric()
+                    ->sortable(),
+
+                TextColumn::make('status_id')
+                    ->label('Statuss')
+                    ->badge()
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        '1' => 'Plānota',
+                        '2' => 'Aktīva',
+                        '3' => 'Pabeigta',
+                        '4' => 'Atcelta',
+                        default => 'Nav norādīts',
+                    })
+                    ->color(fn (string $state): string => match ($state) {
+                        '1' => 'info',
+                        '2' => 'warning',
+                        '3' => 'success',
+                        '4' => 'danger',
+                        default => 'gray',
+                    })
                     ->sortable(),
 
                 TextColumn::make('created_at')

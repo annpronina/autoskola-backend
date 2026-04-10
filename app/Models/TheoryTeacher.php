@@ -27,4 +27,9 @@ class TheoryTeacher extends Model
     public function groups() {
         return $this->hasMany(Group::class);
     }
+
+
+    public function getFullNameAttribute(): string {
+        return "{$this->name} {$this->surname}";
+    }
 }

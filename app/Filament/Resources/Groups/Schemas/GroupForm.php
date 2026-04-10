@@ -7,7 +7,11 @@ use Filament\Support\Enums\GridDirection;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\ToggleButtons;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class GroupForm
 {
@@ -17,6 +21,12 @@ class GroupForm
             ->components([
                 TextInput::make('name')
                     ->label('Grupas nosaukums')
+                    ->required()
+                    ->columns(1),
+
+                Select::make('category_id')
+                    ->label('Kategorijas')
+                    ->relationship(name: 'category', titleAttribute: 'name')
                     ->required(),
 
                 Textarea::make('description')
@@ -38,19 +48,36 @@ class GroupForm
                     ->displayFormat('d/m/Y')
                     ->required(),
 
-                Select::make('category_id')
-                    ->label('Kategorijas')
-                    ->relationship(name: 'category', titleAttribute: 'name')
-                    ->required()
-                    ->columns(2)
-                    ->columnSpanFull(),
-
                 Select::make('theory_teacher_id')
                     ->label('Teorijas pasniedzējs')
-                    ->relationship(name: 'theoryTeacher', titleAttribute: 'name')
-                    ->required()
-                    ->columns(2)
-                    ->columnSpanFull(),
+                    ->native(false)
+                    ->relationship(
+                        name: 'theoryTeacher',
+                        modifyQueryUsing: fn (Builder $query) => $query->orderBy('name')->orderBy('surname'))
+                    ->getOptionLabelFromRecordUsing(fn (Model $teacher) => "{$teacher->name} {$teacher->surname}")
+                    ->required(),
+
+                ToggleButtons::make('status_id')
+                    ->label('Statuss')
+                    ->options([
+                        1 => 'Plānota',
+                        2 => 'Aktīva',
+                        3 => 'Pabeigta',
+                        4 => 'Atcelta'
+                    ])
+                    ->icons([
+                        1 => Heroicon::OutlinedClock,
+                        2 => Heroicon::OutlinedPlay,
+                        3 => Heroicon::CheckCircle,
+                        4 => Heroicon::XCircle
+                    ])
+                    ->colors([
+                        1 => 'info',
+                        2 => 'warning',
+                        3 => 'success',
+                        4 => 'danger'
+                    ])
+                    ->inline()
             ]);
     }
 }
