@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             TheoryTeacherSeeder::class,
             StudentSeeder::class,
             DrivingInstructorSeeder::class,
+            DrivingLessonStatusSeeder::class,
+            DrivingLessonSeeder::class
         ]);
     }
 }
