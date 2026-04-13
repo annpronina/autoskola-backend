@@ -20,7 +20,6 @@ class CategoryForm
                 Textarea::make('description')
                     ->label('Apraksts')
                     ->rows(4)
-                    ->required()
                     ->columnSpanFull()
                     ->maxLength(255),
             ]);
