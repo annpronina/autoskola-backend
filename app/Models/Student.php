@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Group;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\DrivingLesson;
 
 class Student extends Model
 {
@@ -25,6 +25,14 @@ class Student extends Model
 
     public function group() {
         return $this->belongsToMany(Group::class);
+    }
+
+    public function drivingLessons() {
+        return $this->hasMany(DrivingLesson::class);
+    }
+
+    public function getFullNameAttribute(): string {
+        return "{$this->name} {$this->surname}";
     }
 
 }

@@ -7,8 +7,7 @@ use App\Models\Student;
 use App\Models\DrivingInstructor;
 use App\Models\TheoryTeacher;
 use App\Models\Group;
-
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\DrivingLesson;
 
 class Category extends Model
 {
@@ -30,6 +29,10 @@ class Category extends Model
     }
 
     public function groups() {
-        return $this->HasMany(Group::class);
+        return $this->hasMany(Group::class);
+    }
+
+    public function drivingLessons() {
+        return $this->hasMany(DrivingLesson::class);
     }
 }
