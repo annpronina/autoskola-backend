@@ -3,16 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
+use App\Models\DrivingLesson;
 
 class Vehicle extends Model
 {
     protected $fillable = [
-        'type', // car, motorcycle, scooter...
+        'type', 
         'brand',
         'model',
         'year',
-        'transmission', // manual, automatic...
-        'fuel_type',    // diesel, petrol, electric...
+        'transmission', 
+        'fuel_type',    
         'category_id'
     ];  
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function drivingLessons() {
+        return $this->hasMany(DrivingLesson::class);
+    }
 }

@@ -8,6 +8,7 @@ use App\Models\DrivingInstructor;
 use App\Models\TheoryTeacher;
 use App\Models\Group;
 use App\Models\DrivingLesson;
+use App\Models\Vehicle;
 
 class Category extends Model
 {
@@ -34,5 +35,9 @@ class Category extends Model
 
     public function drivingLessons() {
         return $this->hasMany(DrivingLesson::class);
+    }
+
+    public function vehicles() {
+        return $this->hasMany(Vehicle::class);
     }
 }

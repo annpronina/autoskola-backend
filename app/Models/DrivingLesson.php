@@ -7,6 +7,7 @@ use App\Models\Student;
 use App\Models\DrivingInstructor;
 use App\Models\Category;
 use App\Models\DrivingLessonStatus;
+use App\Models\Vehicle;
 
 class DrivingLesson extends Model
 {
@@ -34,5 +35,9 @@ class DrivingLesson extends Model
 
     public function drivingLessonStatus() {
         return $this->belongsTo(drivingLessonStatus::class);
+    }
+
+    public function vehicle() {
+        return $this->belongsTo(Vehicle::class);
     }
 }
