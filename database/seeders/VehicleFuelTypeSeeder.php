@@ -14,9 +14,9 @@ class VehicleFuelTypeSeeder extends Seeder
     public function run(): void
     {
         DB::table('vehicle_fuel_type')->insert([
-            ['name' => 'Diesel'],
-            ['name' => 'Petrol'],
-            ['name' => 'Electric']
+            ['fuel_type' => 'Diesel'],
+            ['fuel_type' => 'Petrol'],
+            ['fuel_type' => 'Electric']
         ]);
     }
 }
