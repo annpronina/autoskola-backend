@@ -8,6 +8,7 @@ use App\Models\DrivingLesson;
 use App\Models\VehicleType;
 use App\Models\VehicleFuelType;
 use App\Models\VehicleTransmission;
+use App\Models\DrivingInstructor;
 
 class Vehicle extends Model
 {
@@ -39,5 +40,13 @@ class Vehicle extends Model
 
     public function vehicleTransmission() {
         return $this->belongsTo(VehicleTransmission::class);
+    }
+
+    public function drivingInstructor() {
+        return $this->belongsTo(DrivingInstructor::class);
+    }
+
+    public function getFullNameAttribute(): string {
+        return "{$this->brand} {$this->model}";
     }
 }

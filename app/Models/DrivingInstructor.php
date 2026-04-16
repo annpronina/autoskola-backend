@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\DrivingLesson;
+use App\Models\Vehicle;
 
 class DrivingInstructor extends Model
 {
@@ -34,5 +35,9 @@ class DrivingInstructor extends Model
 
     public function getFullNameAttribute(): string {
         return "{$this->name} {$this->surname}";
+    }
+
+    public function vehicles() {
+        return $this->hasMany(Vehicle::class);
     }
 }
