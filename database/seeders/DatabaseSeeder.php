@@ -22,7 +22,11 @@ class DatabaseSeeder extends Seeder
             StudentSeeder::class,
             DrivingInstructorSeeder::class,
             DrivingLessonStatusSeeder::class,
-            DrivingLessonSeeder::class
+            DrivingLessonSeeder::class,
+            VehicleFuelTypeSeeder::class,
+            VehicleTransmissionSeeder::class,
+            VehicleTypeSeeder::class,
+            VehicleSeeder::class  
         ]);
     }
 }
