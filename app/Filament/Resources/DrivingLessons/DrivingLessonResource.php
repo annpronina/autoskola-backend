@@ -19,6 +19,7 @@ class DrivingLessonResource extends Resource
     protected static ?string $model = DrivingLesson::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCalendarDays;
+    protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::CalendarDays;
 
     protected static ?string $navigationLabel = 'Braukšanas nodarbības';
 

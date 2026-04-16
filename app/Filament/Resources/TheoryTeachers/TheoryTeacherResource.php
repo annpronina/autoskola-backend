@@ -19,6 +19,7 @@ class TheoryTeacherResource extends Resource
     protected static ?string $model = TheoryTeacher::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedAcademicCap;
+    protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::AcademicCap;
 
     protected static ?string $recordTitleAttribute = 'name';
 

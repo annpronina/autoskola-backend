@@ -20,6 +20,7 @@ class StudentResource extends Resource
     protected static ?string $model = Student::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUser;
+    protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::User;
 
     protected static ?string $recordTitleAttribute = 'name';
 

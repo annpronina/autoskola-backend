@@ -19,6 +19,7 @@ class VehicleResource extends Resource
     protected static ?string $model = Vehicle::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTruck;
+    protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::Truck;
 
     protected static ?string $recordTitleAttribute = 'model';
 
