@@ -16,4 +16,19 @@ class EditDrivingInstructor extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return 'Rediģēt braukšanas instruktoru';
+    }
+
+    public function getBreadcrumb(): string
+    {
+        return 'Rediģēt';
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
