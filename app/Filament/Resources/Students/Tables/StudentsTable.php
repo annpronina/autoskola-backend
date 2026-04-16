@@ -16,14 +16,11 @@ class StudentsTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->label('Vārds')
-                    ->searchable(),
-
-                TextColumn::make('surname')
-                    ->label('Uzvārds')
-                    ->searchable(),
-
+                TextColumn::make('full_name')
+                    ->label('Vārds, Uzvārds')
+                    ->getStateUsing(fn ($record) => "{$record->name} {$record->surname}")
+                    ->searchable(['name', 'surname']),
+        
                 TextColumn::make('personal_code')
                     ->label('Personas kods')
                     ->searchable(),
@@ -43,6 +40,9 @@ class StudentsTable
                 TextColumn::make('categories.name')
                     ->label('Kategorijas')
                     ->searchable(),
+                
+                TextColumn::make('group.name')
+                    ->label('Grupa'),
 
                 TextColumn::make('created_at')
                     ->dateTime('d.m.Y H:i')

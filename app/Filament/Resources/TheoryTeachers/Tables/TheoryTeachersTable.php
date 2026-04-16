@@ -14,14 +14,11 @@ class TheoryTeachersTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->label('Vārds')
-                    ->searchable(),
-
-                TextColumn::make('surname')
-                    ->label('Uzvārds')
-                    ->searchable(),
-
+                TextColumn::make('full_name')
+                    ->label('Vārds, Uzvārds')
+                    ->getStateUsing(fn ($record) => "{$record->name} {$record->surname}")
+                    ->searchable(['name', 'surname']),
+                    
                 TextColumn::make('personal_code')
                     ->label('Personas kods')
                     ->searchable(),
