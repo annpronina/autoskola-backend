@@ -21,9 +21,11 @@ class DrivingInstructorResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedIdentification;
     protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::Identification;
 
-    protected static ?string $recordTitleAttribute = 'name';
+    protected static ?string $recordTitleAttribute = 'full_name';
 
     protected static ?string $navigationLabel = 'Braukšanas instruktori';
+    protected static ?string $modelLabel = 'braukšanas instruktors';
+    protected static ?string $pluralModelLabel = 'braukšanas instruktori';
 
     protected static ?int $navigationSort = 2;
 
