@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             GroupStatusSeeder::class,
             CategorySeeder::class,
             TheoryTeacherSeeder::class,
+            GroupSeeder::class,
             StudentSeeder::class,
             DrivingInstructorSeeder::class,
             DrivingLessonStatusSeeder::class,

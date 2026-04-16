@@ -13,7 +13,7 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('students')->insert([
+        DB::table('students')->upsert([
             [
                 'name' => 'Jānis',
                 'surname' => 'Bērziņš',
@@ -214,9 +214,32 @@ class StudentSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
-        ]);
+        ], ['email']);
 
-        DB::table('group_student')->insert([
+        DB::table('category_student')->upsert([
+            ['category_id' => 1, 'student_id' => 1],
+            ['category_id' => 1, 'student_id' => 2],
+            ['category_id' => 2, 'student_id' => 3],
+            ['category_id' => 3, 'student_id' => 4],
+            ['category_id' => 4, 'student_id' => 5],
+            ['category_id' => 5, 'student_id' => 6],
+            ['category_id' => 6, 'student_id' => 7],
+            ['category_id' => 7, 'student_id' => 8],
+            ['category_id' => 1, 'student_id' => 9],
+            ['category_id' => 2, 'student_id' => 10],
+            ['category_id' => 3, 'student_id' => 11],
+            ['category_id' => 4, 'student_id' => 12],
+            ['category_id' => 5, 'student_id' => 13],
+            ['category_id' => 6, 'student_id' => 14],
+            ['category_id' => 7, 'student_id' => 15],
+            ['category_id' => 1, 'student_id' => 16],
+            ['category_id' => 2, 'student_id' => 17],
+            ['category_id' => 3, 'student_id' => 18],
+            ['category_id' => 4, 'student_id' => 19],
+            ['category_id' => 5, 'student_id' => 20],
+        ], ['category_id', 'student_id']);
+
+        DB::table('group_student')->upsert([
             ['group_id' => 1, 'student_id' => 1],
             ['group_id' => 1, 'student_id' => 2],
             ['group_id' => 1, 'student_id' => 3],
@@ -243,6 +266,6 @@ class StudentSeeder extends Seeder
             ['group_id' => 7, 'student_id' => 18],
             ['group_id' => 7, 'student_id' => 19],
             ['group_id' => 7, 'student_id' => 20],
-        ]); 
+        ], ['group_id', 'student_id']);
     }
 }
