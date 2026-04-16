@@ -18,7 +18,7 @@ class DrivingInstructorResource extends Resource
 {
     protected static ?string $model = DrivingInstructor::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedIdentification;
 
     protected static ?string $recordTitleAttribute = 'name';
 

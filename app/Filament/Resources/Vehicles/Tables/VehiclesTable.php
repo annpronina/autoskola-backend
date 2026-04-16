@@ -15,25 +15,34 @@ class VehiclesTable
         return $table
             ->columns([
                 TextColumn::make('type')
+                    ->label('Transportlīdzekļa tips')
                     ->searchable(),
+
                 TextColumn::make('brand')
                     ->searchable(),
+
                 TextColumn::make('model')
                     ->searchable(),
+
                 TextColumn::make('year')
                     ->numeric()
                     ->sortable(),
+
                 TextColumn::make('transmission')
                     ->searchable(),
+
                 TextColumn::make('fuel_type')
                     ->searchable(),
+
                 TextColumn::make('category_id')
                     ->numeric()
                     ->sortable(),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
