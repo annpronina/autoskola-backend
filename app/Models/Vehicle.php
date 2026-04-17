@@ -16,6 +16,7 @@ class Vehicle extends Model
         'type', 
         'brand',
         'model',
+        'number_plate',
         'year',
         'transmission', 
         'fuel_type',    
@@ -47,6 +48,6 @@ class Vehicle extends Model
     }
 
     public function getFullNameAttribute(): string {
-        return "{$this->brand} {$this->model}";
+        return "{$this->brand} {$this->model} ({$this->number_plate})";
     }
 }
