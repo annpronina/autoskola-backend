@@ -13,7 +13,7 @@ class TheoryTeacherSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('theory_teachers')->insert([
+        DB::table('theory_teachers')->upsert([
             [
                 'name' => 'Andris',
                 'surname' => 'Ozoliņš',
@@ -23,8 +23,6 @@ class TheoryTeacherSeeder extends Seeder
                 'phone' => '+37120000001',
                 'registered_since' => '2018-09-01',
                 'description' => 'Pieredzējis teorijas pasniedzējs ar vairāk nekā 10 gadu pieredzi autoskolā.',
-                'created_at' => now(),
-                'updated_at' => now()
             ],
             [
                 'name' => 'Ilze',
@@ -35,12 +33,10 @@ class TheoryTeacherSeeder extends Seeder
                 'phone' => '+37120000002',
                 'registered_since' => '2020-01-15', 
                 'description' => 'Specializējas motociklu kategoriju teorijā un eksāmenu sagatavošanā.',
-                'created_at' => now(),
-                'updated_at' => now()
             ],
-        ]);
+        ], ['email']);
 
-        DB::table('category_theory_teacher')->insert([
+        DB::table('category_theory_teacher')->upsert([
             ['category_id' => '5', 'theory_teacher_id' => '1', 'created_at' => now(), 'updated_at' => now()],
             ['category_id' => '6', 'theory_teacher_id' => '1', 'created_at' => now(), 'updated_at' => now()],
             ['category_id' => '7', 'theory_teacher_id' => '1', 'created_at' => now(), 'updated_at' => now()],
@@ -48,6 +44,6 @@ class TheoryTeacherSeeder extends Seeder
             ['category_id' => '2', 'theory_teacher_id' => '2', 'created_at' => now(), 'updated_at' => now()],
             ['category_id' => '3', 'theory_teacher_id' => '2', 'created_at' => now(), 'updated_at' => now()],
             ['category_id' => '4', 'theory_teacher_id' => '2', 'created_at' => now(), 'updated_at' => now()],
-        ]);
+        ], ['category_id', 'theory_teacher_id']);
     }
 }

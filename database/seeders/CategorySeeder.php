@@ -13,42 +13,14 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categories')->insert([
-            [
-                'name' => 'A',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'AM',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'A1',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'A2',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'ADR',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'B',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'BE',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-        ]);
+        DB::table('categories')->upsert([
+            ['name' => 'A'],
+            ['name' => 'AM'],
+            ['name' => 'A1'],
+            ['name' => 'A2'],
+            ['name' => 'ADR'],
+            ['name' => 'B'],
+            ['name' => 'BE'],
+        ], ['name']);
     }
 }

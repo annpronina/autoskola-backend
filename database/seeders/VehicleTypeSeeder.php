@@ -13,11 +13,11 @@ class VehicleTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('vehicle_types')->insert([
+        DB::table('vehicle_types')->upsert([
             ['type' => 'Car'],
             ['type' => 'Motorcycle'],
             ['type' => 'Scooter'],
             ['type' => 'Trailer']
-        ]);
+        ], ['type']);
     }
 }

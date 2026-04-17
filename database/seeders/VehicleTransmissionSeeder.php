@@ -13,9 +13,9 @@ class VehicleTransmissionSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('vehicle_transmission')->insert([
+        DB::table('vehicle_transmission')->upsert([
             ['transmission' => 'Manual'],
             ['transmission' => 'Automatic']
-        ]);
+        ], ['transmission']);
     }
 }
