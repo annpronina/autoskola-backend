@@ -21,7 +21,6 @@ class DrivingInstructor extends Model
         // Profesionālā informācija
         'registered_since',
         'category_id',
-        'vehicle',
         'description'
     ]; 
 
