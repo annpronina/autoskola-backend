@@ -7,17 +7,18 @@ use App\Models\Student;
 use App\Models\Category;
 use App\Models\TheoryTeacher;
 use App\Models\GroupStatus;
+use App\Models\TheoryLesson;
 
 class Group extends Model
 {
     protected $fillable = [
         'name',
-        'description',
         'start_date',
         'end_date',
         'category_id',
         'theory_teacher_id',
-        'status_id'
+        'status_id',
+        'lesson_count'
     ];
 
     public function students() {
@@ -34,5 +35,9 @@ class Group extends Model
 
     public function groupStatus() {
         return $this->belongsTo(GroupStatus::class);
+    }
+
+    public function theoryLessons() {
+        return $this->hasMany(TheoryLesson::class);
     }
 }
