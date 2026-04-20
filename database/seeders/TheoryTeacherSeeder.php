@@ -23,6 +23,8 @@ class TheoryTeacherSeeder extends Seeder
                 'phone' => '+37120000001',
                 'registered_since' => '2018-09-01',
                 'description' => 'Pieredzējis teorijas pasniedzējs ar vairāk nekā 10 gadu pieredzi autoskolā.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'Ilze',
@@ -33,6 +35,8 @@ class TheoryTeacherSeeder extends Seeder
                 'phone' => '+37120000002',
                 'registered_since' => '2020-01-15', 
                 'description' => 'Specializējas motociklu kategoriju teorijā un eksāmenu sagatavošanā.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
         ], ['email']);
 

@@ -217,55 +217,255 @@ class StudentSeeder extends Seeder
         ], ['email']);
 
         DB::table('category_student')->upsert([
-            ['category_id' => 1, 'student_id' => 1],
-            ['category_id' => 1, 'student_id' => 2],
-            ['category_id' => 2, 'student_id' => 3],
-            ['category_id' => 3, 'student_id' => 4],
-            ['category_id' => 4, 'student_id' => 5],
-            ['category_id' => 5, 'student_id' => 6],
-            ['category_id' => 6, 'student_id' => 7],
-            ['category_id' => 7, 'student_id' => 8],
-            ['category_id' => 1, 'student_id' => 9],
-            ['category_id' => 2, 'student_id' => 10],
-            ['category_id' => 3, 'student_id' => 11],
-            ['category_id' => 4, 'student_id' => 12],
-            ['category_id' => 5, 'student_id' => 13],
-            ['category_id' => 6, 'student_id' => 14],
-            ['category_id' => 7, 'student_id' => 15],
-            ['category_id' => 1, 'student_id' => 16],
-            ['category_id' => 2, 'student_id' => 17],
-            ['category_id' => 3, 'student_id' => 18],
-            ['category_id' => 4, 'student_id' => 19],
-            ['category_id' => 5, 'student_id' => 20],
+            [   
+                'category_id' => 1, 'student_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 1,
+                'student_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 2,
+                'student_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 3,
+                'student_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 4,
+                'student_id' => 5,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 5,
+                'student_id' => 6,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 6,
+                'student_id' => 7,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 7,
+                'student_id' => 8,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 1,
+                'student_id' => 9,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 2,
+                'student_id' => 10,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 3,
+                'student_id' => 11,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 4,
+                'student_id' => 12,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 5,
+                'student_id' => 13,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 6,
+                'student_id' => 14,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 7,
+                'student_id' => 15,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 1,
+                'student_id' => 16,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 2,
+                'student_id' => 17,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 3,
+                'student_id' => 18,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 4,
+                'student_id' => 19,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => 5,
+                'student_id' => 20,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ], ['category_id', 'student_id']);
 
         DB::table('group_student')->upsert([
-            ['group_id' => 1, 'student_id' => 1],
-            ['group_id' => 1, 'student_id' => 2],
-            ['group_id' => 1, 'student_id' => 3],
+            [
+                'group_id' => 1,
+                'student_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 1,
+                'student_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 1,
+                'student_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
 
-            ['group_id' => 2, 'student_id' => 4],
-            ['group_id' => 2, 'student_id' => 5],
-            ['group_id' => 2, 'student_id' => 6],
+            [
+                'group_id' => 2,
+                'student_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 2,
+                'student_id' => 5,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 2,
+                'student_id' => 6,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
 
-            ['group_id' => 3, 'student_id' => 7],
-            ['group_id' => 3, 'student_id' => 8],
-            ['group_id' => 3, 'student_id' => 9],
+            [
+                'group_id' => 3,
+                'student_id' => 7,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 3,
+                'student_id' => 8,
+                'created_at' => now(),
+                'updated_at' => now()
+                
+            ],
+            [
+                'group_id' => 3,
+                'student_id' => 9,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
 
-            ['group_id' => 4, 'student_id' => 10],
-            ['group_id' => 4, 'student_id' => 11],
-            ['group_id' => 4, 'student_id' => 12],
+            [
+                'group_id' => 4,
+                'student_id' => 10,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 4,
+                'student_id' => 11,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 4,
+                'student_id' => 12,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
 
-            ['group_id' => 5, 'student_id' => 13],
-            ['group_id' => 5, 'student_id' => 14],
+            [
+                'group_id' => 5,
+                'student_id' => 13,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 5,
+                'student_id' => 14,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
 
-            ['group_id' => 6, 'student_id' => 15],
-            ['group_id' => 6, 'student_id' => 16],
-            ['group_id' => 6, 'student_id' => 17],
+            [
+                'group_id' => 6,
+                'student_id' => 15,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 6,
+                'student_id' => 16,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 6,
+                'student_id' => 17,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
 
-            ['group_id' => 7, 'student_id' => 18],
-            ['group_id' => 7, 'student_id' => 19],
-            ['group_id' => 7, 'student_id' => 20],
+            [
+                'group_id' => 7,
+                'student_id' => 18,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 7,
+                'student_id' => 19,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'group_id' => 7,
+                'student_id' => 20,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ], ['group_id', 'student_id']);
     }
 }

@@ -23,6 +23,8 @@ class DrivingInstructorSeeder extends Seeder
                 'address' => 'Rīga, Brīvības iela 45',
                 'registered_since' => '2017-03-10',
                 'description' => 'Pieredzējis instruktors A, A1 un A2 kategorijām.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'Aigars',
@@ -33,6 +35,8 @@ class DrivingInstructorSeeder extends Seeder
                 'address' => 'Rīga, Tērbatas iela 17',
                 'registered_since' => '2019-08-01',
                 'description' => 'Strādā ar B kategorijas kursantiem.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'Juris',
@@ -43,6 +47,8 @@ class DrivingInstructorSeeder extends Seeder
                 'address' => 'Rīga, Lāčplēša iela 28',
                 'registered_since' => '2020-05-15',
                 'description' => 'Māca iesācējus un palīdz sagatavoties eksāmeniem.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'Edgars',
@@ -53,6 +59,8 @@ class DrivingInstructorSeeder extends Seeder
                 'address' => 'Rīga, Dzirnavu iela 9',
                 'registered_since' => '2016-11-20',
                 'description' => 'Specializējas motociklu apmācībā.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'Ilmārs',
@@ -63,6 +71,8 @@ class DrivingInstructorSeeder extends Seeder
                 'address' => 'Rīga, Čaka iela 63',
                 'registered_since' => '2015-02-01',
                 'description' => 'Pieredze ar A, A1 un A2 kategorijām.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'Kaspars',
@@ -73,6 +83,8 @@ class DrivingInstructorSeeder extends Seeder
                 'address' => 'Rīga, Vienības gatve 100',
                 'registered_since' => '2021-06-01',
                 'description' => 'Jauns instruktors ar modernu pieeju apmācībai.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'Rihards',
@@ -83,17 +95,54 @@ class DrivingInstructorSeeder extends Seeder
                 'address' => 'Rīga, Maskavas iela 75',
                 'registered_since' => '2018-04-12',
                 'description' => 'Pieredzējis instruktors ar uzsvaru uz drošu un pārliecinātu braukšanu.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
         ], ['email']);
 
         DB::table('category_driving_instructor')->upsert([
-            ['category_id' => '5', 'driving_instructor_id' => '1'],
-            ['category_id' => '6', 'driving_instructor_id' => '2'],
-            ['category_id' => '7', 'driving_instructor_id' => '3'],
-            ['category_id' => '1', 'driving_instructor_id' => '4'],
-            ['category_id' => '2', 'driving_instructor_id' => '5'],
-            ['category_id' => '3', 'driving_instructor_id' => '6'],
-            ['category_id' => '4', 'driving_instructor_id' => '7'],
+            [
+                'category_id' => '5',
+                'driving_instructor_id' => '1',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => '6',
+                'driving_instructor_id' => '2',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => '7',
+                'driving_instructor_id' => '3',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => '1',
+                'driving_instructor_id' => '4',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => '2',
+                'driving_instructor_id' => '5',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => '3',
+                'driving_instructor_id' => '6',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'category_id' => '4',
+                'driving_instructor_id' => '7',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ], ['category_id', 'driving_instructor_id']);
     }
 }

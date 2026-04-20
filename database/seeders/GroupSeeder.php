@@ -21,6 +21,9 @@ class GroupSeeder extends Seeder
                 'category_id' => 1,
                 'theory_teacher_id' => 2,
                 'status_id' => 1,
+                'lesson_count' => 10,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'AM-2026-04',
@@ -29,6 +32,9 @@ class GroupSeeder extends Seeder
                 'category_id' => 2,
                 'theory_teacher_id' => 2,
                 'status_id' => 2,
+                'lesson_count' => 8,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'A1-2026-05',
@@ -37,6 +43,9 @@ class GroupSeeder extends Seeder
                 'category_id' => 3,
                 'theory_teacher_id' => 2,
                 'status_id' => 1,
+                'lesson_count' => 10,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'A2-2026-03',
@@ -45,6 +54,9 @@ class GroupSeeder extends Seeder
                 'category_id' => 4,
                 'theory_teacher_id' => 2,
                 'status_id' => 2,
+                'lesson_count' => 10,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'ADR-2026-04',
@@ -53,6 +65,9 @@ class GroupSeeder extends Seeder
                 'category_id' => 5,
                 'theory_teacher_id' => 1,
                 'status_id' => 4,
+                'lesson_count' => 12,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'B-2026-02',
@@ -61,6 +76,9 @@ class GroupSeeder extends Seeder
                 'category_id' => 6,
                 'theory_teacher_id' => 1,
                 'status_id' => 3,
+                'lesson_count' => 13,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'name' => 'BE-2026-04',
@@ -69,6 +87,9 @@ class GroupSeeder extends Seeder
                 'category_id' => 7,
                 'theory_teacher_id' => 1,
                 'status_id' => 1,
+                'lesson_count' => 10,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
         ], ['name']);
     }
