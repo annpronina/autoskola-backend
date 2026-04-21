@@ -34,7 +34,7 @@ class Group extends Model
     }
 
     public function groupStatus() {
-        return $this->belongsTo(GroupStatus::class);
+        return $this->belongsTo(GroupStatus::class, 'status_id');
     }
 
     public function theoryLessons() {
