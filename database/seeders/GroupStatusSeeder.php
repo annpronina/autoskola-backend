@@ -13,10 +13,10 @@ class GroupStatusSeeder extends Seeder
     public function run(): void
     {
         DB::table('group_statuses')->upsert([
-            ['name' => 'Planned'],
-            ['name' => 'Active'],
-            ['name' => 'Completed'],
-            ['name' => 'Cancelled'],
+            ['name' => 'Plānota'],
+            ['name' => 'Aktīva'],
+            ['name' => 'Pabeigta'],
+            ['name' => 'Atcelta'],
         ], ['name']);
     }
 }

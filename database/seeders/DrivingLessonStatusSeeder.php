@@ -13,9 +13,9 @@ class DrivingLessonStatusSeeder extends Seeder
     public function run(): void
     {
         DB::table('driving_lesson_status')->upsert([
-            ['name' => 'Planned'],
-            ['name' => 'Completed'],
-            ['name' => 'Cancelled']
+            ['name' => 'Plānota'],
+            ['name' => 'Pabeigta'],
+            ['name' => 'Atcelta']
         ], ['name']);
     }
 }
