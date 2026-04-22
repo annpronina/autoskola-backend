@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\Groups\Schemas;
 
 use Filament\Forms\Components\Select;
-use Filament\Support\Enums\GridDirection;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -21,24 +20,33 @@ class GroupForm
             ->components([
                 TextInput::make('name')
                     ->label('Grupas nosaukums')
-                    ->required()
-                    ->columns(1),
+                    ->maxLength(255)
+                    ->placeholder('Ievadiet grupas nosaukumu (AM-2026-04)')
+                    ->unique(ignoreRecord: true)
+                    ->validationMessages([
+                        'required' => 'Lūdzu, ievadiet grupas nosaukumu.',
+                        'max' => 'Grupas nosaukums nedrīkst pārsniegt 255 rakstzīmes.',
+                        'unique' => 'Grupa ar šādu nosaukumu jau eksistē.',
+                    ])
+                    ->required(),
 
                 Select::make('category_id')
                     ->label('Kategorijas')
                     ->relationship(name: 'category', titleAttribute: 'name')
+                    ->placeholder('Izvēlieties kategoriju')
+                    ->validationMessages([
+                        'required' => 'Lūdzu, izvēlieties kategoriju.',
+                    ])
                     ->required(),
-
-                Textarea::make('description')
-                    ->label('Apraksts')
-                    ->rows(4)
-                    ->maxLength(255)
-                    ->columnSpanFull(),
 
                 DatePicker::make('start_date')
                     ->label('Sākuma datums')
                     ->native(false)
                     ->displayFormat('d/m/Y')
+                    ->placeholder('Izvēlieties sākuma datumu')
+                     ->validationMessages([
+                        'required' => 'Lūdzu, izvēlieties sākuma datumu.',
+                    ])
                     ->required(),
 
                 DatePicker::make('end_date')
@@ -46,6 +54,11 @@ class GroupForm
                     ->after('start_date')
                     ->native(false)
                     ->displayFormat('d/m/Y')
+                    ->placeholder('Izvēlieties beigu datumu')
+                     ->validationMessages([
+                        'required' => 'Lūdzu, izvēlieties beigu datumu.',
+                        'after' => 'Beigu datumam jābūt pēc sākuma datuma.'
+                    ])
                     ->required(),
 
                 Select::make('theory_teacher_id')
@@ -55,7 +68,21 @@ class GroupForm
                         name: 'theoryTeacher',
                         modifyQueryUsing: fn (Builder $query) => $query->orderBy('name')->orderBy('surname'))
                     ->getOptionLabelFromRecordUsing(fn (Model $teacher) => "{$teacher->name} {$teacher->surname}")
+                    ->placeholder('Izvēlieties teorijas pasniedzēju')
+                    ->validationMessages([
+                        'required' => 'Lūdzu, izvēlieties teorijas pasniedzēju.',
+                    ])
                     ->required(),
+
+                Textarea::make('description')
+                    ->label('Apraksts')
+                    ->rows(4)
+                    ->maxLength(255)
+                    ->columnSpanFull()
+                    ->placeholder('Ievadiet papildu informāciju par grupu (nav obligāts)...')
+                    ->validationMessages([
+                        'max' => 'Apraksts nedrīkst pārsniegt 255 rakstzīmes.',
+                    ]),
 
                 ToggleButtons::make('status_id')
                     ->label('Statuss')
@@ -78,6 +105,10 @@ class GroupForm
                         4 => 'danger'
                     ])
                     ->inline()
+                    ->validationMessages([
+                        'required' => 'Lūdzu, izvēlieties statusu.'
+                    ])
+                    ->required(),
             ]);
     }
 }

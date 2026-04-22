@@ -16,27 +16,31 @@ class GroupsTable
             ->columns([
                 TextColumn::make('name')
                     ->label('Grupas nosaukums')
-                    ->searchable(),
-
-                TextColumn::make('start_date')
-                    ->label('Sākuma datums')
-                    ->date()
-                    ->sortable(),
-
-                TextColumn::make('end_date')
-                    ->label('Beigu datums')
-                    ->date()
-                    ->sortable(),
-
-                TextColumn::make('category.name')
-                    ->label('Kategorija')
-                    ->numeric()
-                    ->sortable(),
+                    ->searchable()
+                    ->sortable()
+                    ->alignCenter(),
 
                 TextColumn::make('theoryTeacher.full_name')
                     ->label('Teorijas pasniedzējs')
-                    ->numeric()
-                    ->sortable(),
+                    ->alignCenter(),
+
+                TextColumn::make('start_date')
+                    ->label('Sākuma datums')
+                    ->date('d/m/Y')
+                    ->sortable()
+                    ->alignCenter(),
+
+                TextColumn::make('end_date')
+                    ->label('Beigu datums')
+                    ->date('d/m/Y')
+                    ->sortable()
+                    ->alignCenter(),
+
+                TextColumn::make('category.name')
+                    ->label('Kategorija')
+                    ->sortable()
+                    ->badge()
+                    ->alignCenter(),
 
                 TextColumn::make('status_id')
                     ->label('Statuss')
@@ -55,23 +59,28 @@ class GroupsTable
                         '4' => 'danger',
                         default => 'gray',
                     })
-                    ->sortable(),
+                    ->sortable()
+                    ->alignCenter(),
 
                 TextColumn::make('created_at')
                     ->dateTime('d.m.Y H:i')
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('')
+                    ->tooltip('Rediģēt'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
