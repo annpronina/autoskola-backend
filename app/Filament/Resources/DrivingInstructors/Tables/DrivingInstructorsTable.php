@@ -41,8 +41,7 @@ class DrivingInstructorsTable
                     ->alignCenter(),
 
                 TextColumn::make('registered_since')
-                    ->label('Instruktors kopš')
-                    ->date('Y')
+                    ->label('Instruktors kopš')              
                     ->sortable()
                     ->alignCenter(),
 
