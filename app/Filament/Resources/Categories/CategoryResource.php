@@ -13,7 +13,6 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use UnitEnum;
 
 class CategoryResource extends Resource
 {
@@ -25,6 +24,9 @@ class CategoryResource extends Resource
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?string $navigationLabel = 'Kategorijas';
+    protected static ?string $pluralModelLabel = 'Kategorijas';
+    
+    protected static bool $hasTitleCaseModelLabel = false;
 
     protected static ?int $navigationSort = 2;
 
