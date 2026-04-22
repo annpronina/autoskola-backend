@@ -25,24 +25,40 @@ class StudentForm
                             ->label('Vārds')
                             ->maxLength(255)
                             ->placeholder('Ievadiet vārdu')
+                            ->validationMessages([
+                                'required' => 'Lūdzu, ievadiet vārdu.',
+                                'max' => 'Vārds nedrīkst pārsniegt 255 rakstzīmes.',
+                            ])
                             ->required(),
 
                         TextInput::make('surname')
                             ->label('Uzvārds')
                             ->maxLength(255)
                             ->placeholder('Ievadiet uzvārdu')
+                            ->validationMessages([
+                                'required' => 'Lūdzu, ievadiet uzvārdu.',
+                                'max' => 'Uzvārds nedrīkst pārsniegt 255 rakstzīmes.',
+                            ])
                             ->required(),
 
                         TextInput::make('personal_code')
                             ->label('Personas kods')
                             ->maxLength(255)
                             ->placeholder('Ievadiet personas kodu')
+                            ->validationMessages([
+                                'required' => 'Lūdzu, ievadiet personas kodu.',
+                                'max' => 'Personas kods nedrīkst pārsniegt 255 rakstzīmes.',
+                            ])
                             ->required(),
 
                         TextInput::make('address')
                             ->label('Adrese')
                             ->maxLength(255)
                             ->placeholder('Ievadiet dzīvesvietas adresi')
+                            ->validationMessages([
+                                'required' => 'Lūdzu, ievadiet adresi.',
+                                'max' => 'Adrese nedrīkst pārsniegt 255 rakstzīmes.',
+                            ])
                             ->required(),
 
                         TextInput::make('phone')
@@ -50,6 +66,10 @@ class StudentForm
                             ->tel()
                             ->maxLength(255)
                             ->placeholder('Ievadiet telefona numuru')
+                            ->validationMessages([
+                                'required' => 'Lūdzu, ievadiet telefona numuru.',
+                                'max' => 'Telefona numurs nedrīkst pārsniegt 255 rakstzīmes.',
+                            ])
                             ->required(),
 
                         TextInput::make('email')
@@ -57,6 +77,11 @@ class StudentForm
                             ->email()
                             ->maxLength(255)
                             ->placeholder('janis.berzins@example.com')
+                            ->validationMessages([
+                                'required' => 'Lūdzu, ievadiet e-pasta adresi.',
+                                'email' => 'Lūdzu, ievadiet derīgu e-pasta adresi.',
+                                'max' => 'E-pasta adrese nedrīkst pārsniegt 255 rakstzīmes.',
+                            ])
                             ->required(),
                         ])
                         ->collapsible()
@@ -66,14 +91,6 @@ class StudentForm
                     ->description('Informācija par kursanta grupām un kategorijām')
                     ->columns(2)
                     ->schema([
-                        CheckboxList::make('categories')
-                            ->label('Kategorijas')
-                            ->relationship(name: 'categories', titleAttribute: 'name')
-                            ->required()
-                            ->columns(4)
-                            ->columnSpanFull()
-                            ->gridDirection(GridDirection::Row),
-
                         Select::make('groups')
                             ->label('Grupas')
                             ->relationship(
@@ -82,11 +99,24 @@ class StudentForm
                                 modifyQueryUsing: fn (Builder $query) => $query->where('start_date', '>', now())
                             )
                             ->multiple()
-                            ->required()
                             ->columns(2)
                             ->placeholder('Izvēlieties grupu')
-                            ->columnSpanFull(),
+                             ->validationMessages([
+                                'required' => 'Lūdzu, izvēlieties vismaz vienu grupu.',
+                            ])
+                            ->columnSpanFull()
+                            ->required(),
 
+                        CheckboxList::make('categories')
+                            ->label('Kategorijas')
+                            ->relationship(name: 'categories', titleAttribute: 'name')
+                            ->columns(4)
+                            ->columnSpanFull()
+                            ->gridDirection(GridDirection::Row)
+                            ->validationMessages([
+                                'required' => 'Lūdzu, izvēlieties vismaz vienu kategoriju.',
+                            ])
+                            ->required()
                         ])
                         ->collapsible()
                         ->columnSpanFull()
