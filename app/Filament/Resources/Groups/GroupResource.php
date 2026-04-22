@@ -24,6 +24,10 @@ class GroupResource extends Resource
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?string $navigationLabel = 'Grupas';
+    protected static ?string $modelLabel = 'grupa';
+    protected static ?string $pluralModelLabel = 'Grupas';
+    
+    protected static bool $hasTitleCaseModelLabel = false;
 
     protected static ?int $navigationSort = 1;
 
