@@ -27,11 +27,6 @@ class StudentsTable
                     ->searchable()
                     ->alignCenter(),
 
-                TextColumn::make('address')
-                    ->label('Adrese')
-                    ->searchable()
-                    ->alignCenter(),
-
                 TextColumn::make('phone')
                     ->label('Telefona numurs')
                     ->searchable()
@@ -39,6 +34,11 @@ class StudentsTable
 
                 TextColumn::make('email')
                     ->label('E-pasta adrese')
+                    ->searchable()
+                    ->alignCenter(),
+
+                TextColumn::make('address')
+                    ->label('Adrese')
                     ->searchable()
                     ->alignCenter(),
 
