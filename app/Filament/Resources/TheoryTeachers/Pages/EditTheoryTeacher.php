@@ -16,4 +16,14 @@ class EditTheoryTeacher extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return 'Rediģēt teorijas pasniedzēju';
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

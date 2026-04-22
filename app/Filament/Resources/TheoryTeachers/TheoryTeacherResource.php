@@ -21,10 +21,14 @@ class TheoryTeacherResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedAcademicCap;
     protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::AcademicCap;
 
-    protected static ?string $recordTitleAttribute = 'name';
-
+    protected static ?string $recordTitleAttribute = 'full_name';
 
     protected static ?string $navigationLabel = 'Teorijas pasniedzēji';
+
+    protected static ?string $modelLabel = 'teorijas pasniedzējs';
+    protected static ?string $pluralModelLabel = 'Teorijas pasniedzēji';
+
+    protected static bool $hasTitleCaseModelLabel = false;
 
     protected static ?int $navigationSort = 3;
 
