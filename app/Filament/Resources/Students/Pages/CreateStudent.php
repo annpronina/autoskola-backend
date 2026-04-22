@@ -13,9 +13,4 @@ class CreateStudent extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
-
-    public function getTitle(): string {
-        return 'Jauns kursants';
-    }
-    
 }

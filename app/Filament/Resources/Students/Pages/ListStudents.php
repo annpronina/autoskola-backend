@@ -16,9 +16,4 @@ class ListStudents extends ListRecords
             CreateAction::make(),
         ];
     }
-
-      public function getTitle(): string 
-    {
-        return 'Kursanti';
-    }
 }

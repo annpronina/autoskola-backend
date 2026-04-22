@@ -21,4 +21,9 @@ class EditStudent extends EditRecord
     {
         return 'Rediģēt kursantu';
     }
+
+     protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
