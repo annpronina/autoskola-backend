@@ -17,9 +17,4 @@ class ListDrivingInstructors extends ListRecords
                 ->label('Jauns braukšanas instruktors'),
         ];
     }
-
-    public function getTitle(): string 
-    {
-        return 'Braukšanas instruktori';
-    }
 }

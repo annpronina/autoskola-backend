@@ -25,7 +25,9 @@ class DrivingInstructorResource extends Resource
 
     protected static ?string $navigationLabel = 'Braukšanas instruktori';
     protected static ?string $modelLabel = 'braukšanas instruktors';
-    protected static ?string $pluralModelLabel = 'braukšanas instruktori';
+    protected static ?string $pluralModelLabel = 'Braukšanas instruktori';
+    
+    protected static bool $hasTitleCaseModelLabel = false;
 
     protected static ?int $navigationSort = 2;
 
