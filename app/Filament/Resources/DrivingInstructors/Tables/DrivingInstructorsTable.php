@@ -17,15 +17,18 @@ class DrivingInstructorsTable
                 TextColumn::make('full_name')
                     ->label('Vārds, Uzvārds')
                     ->getStateUsing(fn ($record) => "{$record->name} {$record->surname}")
-                    ->searchable(['name', 'surname']),
+                    ->searchable(['name', 'surname'])
+                    ->alignCenter(),
 
                 TextColumn::make('personal_code')
                     ->label('Personas kods')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('email')
                     ->label('E-pasta adrese')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('phone')
                     ->label('Telefona numurs')
@@ -33,21 +36,21 @@ class DrivingInstructorsTable
 
                 TextColumn::make('address')
                     ->label('Adrese')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('registered_since')
                     ->label('Instruktors kopš')
                     ->date('Y')
-                    ->sortable(),
+                    ->sortable()
+                    ->alignCenter(),
 
                 TextColumn::make('categories.name')
                     ->label('Kategorijas')
                     ->separator(',')
-                    ->searchable(),
-
-                TextColumn::make('vehicle')
-                    ->label('Transportlīdzeklis')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter()
+                    ->badge(),
 
                 TextColumn::make('created_at')
                     ->dateTime('d.m.Y H:i')
@@ -63,7 +66,9 @@ class DrivingInstructorsTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('')
+                    ->tooltip('Rediģēt'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
