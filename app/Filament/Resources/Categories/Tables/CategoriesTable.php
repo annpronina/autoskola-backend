@@ -16,24 +16,39 @@ class CategoriesTable
             ->columns([
                 TextColumn::make('name')
                     ->label('Nosaukums')
+                    ->alignCenter()
                     ->searchable(),
+
+                TextColumn::make('groups_count')
+                        ->label('Grupas')
+                        ->counts('groups')
+                        ->alignCenter(),
+
+                TextColumn::make('students_count')
+                        ->label('Kursanti')
+                        ->counts('students')
+                        ->alignCenter(),
 
                 TextColumn::make('created_at')
                     ->label('Izveidots')
                     ->dateTime('d.m.Y H:i')
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('')
+                    ->tooltip('Rediģēt'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
