@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +20,7 @@ class TheoryTeacherSeeder extends Seeder
                 'email' => 'andris.ozolins@example.com',
                 'address' => 'Rīga, Brīvības iela 25',
                 'phone' => '+37120000001',
-                'registered_since' => '2018-09-01',
+                'registered_since' => '2018',
                 'description' => 'Pieredzējis teorijas pasniedzējs ar vairāk nekā 10 gadu pieredzi autoskolā.',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -33,7 +32,7 @@ class TheoryTeacherSeeder extends Seeder
                 'email' => 'ilze.kalnina@example.com',
                 'address' => 'Rīga, Tērbatas iela 12',
                 'phone' => '+37120000002',
-                'registered_since' => '2020-01-15', 
+                'registered_since' => '2020', 
                 'description' => 'Specializējas motociklu kategoriju teorijā un eksāmenu sagatavošanā.',
                 'created_at' => now(),
                 'updated_at' => now()

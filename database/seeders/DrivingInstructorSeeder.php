@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +20,7 @@ class DrivingInstructorSeeder extends Seeder
                 'email' => 'maris.berzins@example.com',
                 'phone' => '+37120010001',
                 'address' => 'Rīga, Brīvības iela 45',
-                'registered_since' => '2017-03-10',
+                'registered_since' => '2017',
                 'description' => 'Pieredzējis instruktors A, A1 un A2 kategorijām.',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -33,7 +32,7 @@ class DrivingInstructorSeeder extends Seeder
                 'email' => 'aigars.kalnins@example.com',
                 'phone' => '+37120010002',
                 'address' => 'Rīga, Tērbatas iela 17',
-                'registered_since' => '2019-08-01',
+                'registered_since' => '2019',
                 'description' => 'Strādā ar B kategorijas kursantiem.',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -45,7 +44,7 @@ class DrivingInstructorSeeder extends Seeder
                 'email' => 'juris.ozols@example.com',
                 'phone' => '+37120010003',
                 'address' => 'Rīga, Lāčplēša iela 28',
-                'registered_since' => '2020-05-15',
+                'registered_since' => '2020',
                 'description' => 'Māca iesācējus un palīdz sagatavoties eksāmeniem.',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -57,7 +56,7 @@ class DrivingInstructorSeeder extends Seeder
                 'email' => 'edgars.liepins@example.com',
                 'phone' => '+37120010004',
                 'address' => 'Rīga, Dzirnavu iela 9',
-                'registered_since' => '2016-11-20',
+                'registered_since' => '2016',
                 'description' => 'Specializējas motociklu apmācībā.',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -69,7 +68,7 @@ class DrivingInstructorSeeder extends Seeder
                 'email' => 'ilmars.silins@example.com',
                 'phone' => '+37120010005',
                 'address' => 'Rīga, Čaka iela 63',
-                'registered_since' => '2015-02-01',
+                'registered_since' => '2015',
                 'description' => 'Pieredze ar A, A1 un A2 kategorijām.',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -81,7 +80,7 @@ class DrivingInstructorSeeder extends Seeder
                 'email' => 'kaspars.mezulis@example.com',
                 'phone' => '+37120010006',
                 'address' => 'Rīga, Vienības gatve 100',
-                'registered_since' => '2021-06-01',
+                'registered_since' => '2021',
                 'description' => 'Jauns instruktors ar modernu pieeju apmācībai.',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -93,7 +92,7 @@ class DrivingInstructorSeeder extends Seeder
                 'email' => 'rihards.kalejs@example.com',
                 'phone' => '+37120010007',
                 'address' => 'Rīga, Maskavas iela 75',
-                'registered_since' => '2018-04-12',
+                'registered_since' => '2018',
                 'description' => 'Pieredzējis instruktors ar uzsvaru uz drošu un pārliecinātu braukšanu.',
                 'created_at' => now(),
                 'updated_at' => now()
