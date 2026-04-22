@@ -19,46 +19,60 @@ class StudentsTable
                 TextColumn::make('full_name')
                     ->label('Vārds, Uzvārds')
                     ->getStateUsing(fn ($record) => "{$record->name} {$record->surname}")
-                    ->searchable(['name', 'surname']),
+                    ->searchable(['name', 'surname'])
+                    ->alignCenter(),
         
                 TextColumn::make('personal_code')
                     ->label('Personas kods')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('address')
                     ->label('Adrese')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('phone')
                     ->label('Telefona numurs')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('email')
                     ->label('E-pasta adrese')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('categories.name')
                     ->label('Kategorijas')
-                    ->searchable(),
+                    ->searchable()
+                    ->alignCenter()
+                    ->badge(),
                 
                 TextColumn::make('group.name')
-                    ->label('Grupa'),
+                    ->label('Grupa')
+                    ->alignCenter()
+                    ->badge()
+                    ->color('info'),
 
                 TextColumn::make('created_at')
                     ->dateTime('d.m.Y H:i')
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('')
+                    ->tooltip('Rediģēt'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
