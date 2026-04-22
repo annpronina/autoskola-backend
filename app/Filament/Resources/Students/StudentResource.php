@@ -13,7 +13,6 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use UnitEnum;
 
 class StudentResource extends Resource
 {
@@ -22,9 +21,13 @@ class StudentResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUser;
     protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::User;
 
-    protected static ?string $recordTitleAttribute = 'name';
+    protected static ?string $recordTitleAttribute = 'full_name';
 
+    protected static ?string $modelLabel = 'kursants';
+    protected static ?string $pluralModelLabel = 'Kursanti';
     protected static ?string $navigationLabel = 'Kursanti';
+
+    protected static bool $hasTitleCaseModelLabel = false;
 
     protected static ?int $navigationSort = 1;
 
