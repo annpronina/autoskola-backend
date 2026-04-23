@@ -58,6 +58,16 @@ class GroupForm
                             ])
                             ->required(),
 
+                        TextInput::make('lesson_count')
+                            ->label('Nodarbību skaits')
+                            ->numeric()
+                            ->placeholder('Ievadiet nodarbību skaitu')
+                            ->validationMessages([
+                                'required' => 'Lūdzu, ievadiet nodarbības skaitu.',
+                                'numeric' => 'Nodarbības numuram jābūt skaitlim.',
+                            ])
+                            ->required(),
+
                         Textarea::make('description')
                             ->label('Apraksts')
                             ->rows(4)
@@ -92,7 +102,7 @@ class GroupForm
                             ->validationMessages([
                                 'required' => 'Lūdzu, izvēlieties statusu.'
                             ])
-                            ->required()
+                            ->required(),
                         ])
                         ->collapsible()
                         ->columnSpanFull(),

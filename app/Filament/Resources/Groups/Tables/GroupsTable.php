@@ -36,6 +36,11 @@ class GroupsTable
                     ->sortable()
                     ->alignCenter(),
 
+                TextColumn::make('lesson_count')
+                    ->label('T. nodarbību skaits')
+                    ->sortable()
+                    ->alignCenter(),
+
                 TextColumn::make('category.name')
                     ->label('Kategorija')
                     ->sortable()
@@ -49,15 +54,13 @@ class GroupsTable
                         '1' => 'Plānota',
                         '2' => 'Aktīva',
                         '3' => 'Pabeigta',
-                        '4' => 'Atcelta',
-                        default => 'Nav norādīts',
+                        '4' => 'Atcelta'
                     })
                     ->color(fn (string $state): string => match ($state) {
                         '1' => 'info',
                         '2' => 'warning',
                         '3' => 'success',
-                        '4' => 'danger',
-                        default => 'gray',
+                        '4' => 'danger'
                     })
                     ->sortable()
                     ->alignCenter(),
