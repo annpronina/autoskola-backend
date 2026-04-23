@@ -14,35 +14,27 @@ class DrivingLessonsTable
     {
         return $table
             ->columns([
-                TextColumn::make('category.name')
-                    ->label('Kategorija')
-                    ->numeric()
+                TextColumn::make('date')
+                    ->label('Datums')
+                    ->date('d.m.Y')
+                    ->alignCenter()
+                    ->sortable(),
+
+                TextColumn::make('full_time')
+                    ->label('Laiks')
+                    ->getStateUsing(fn ($record) => "{$record->start_time} - {$record->end_time}")
+                    ->alignCenter()
                     ->sortable(),
 
                 TextColumn::make('drivingInstructor.full_name')
                     ->label('Braukšanas instruktors')
                     ->numeric()
-                    ->sortable(),
-
-                TextColumn::make('date')
-                    ->label('Datums')
-                    ->date('d.m.Y')
-                    ->sortable(),
-
-                TextColumn::make('start_time')
-                    ->label('Sākuma laiks')
-                    ->time('H:i')
-                    ->sortable(),
-
-                TextColumn::make('end_time')
-                    ->label('Beigu laiks')
-                    ->time('H:i')
-                    ->sortable(),
+                    ->alignCenter(),
                     
                 TextColumn::make('student.full_name')
                     ->label('Kursants')
                     ->numeric()
-                    ->sortable(),
+                    ->alignCenter(),
 
                 TextColumn::make('status_id')
                     ->label('Statuss')
@@ -59,23 +51,35 @@ class DrivingLessonsTable
                         '3' => 'danger',
                         default => 'gray',
                     })
-                    ->sortable(),
+                    ->sortable()
+                    ->alignCenter(),
+
+                TextColumn::make('category.name')
+                    ->label('Kategorija')
+                    ->numeric()
+                    ->sortable()
+                    ->badge()
+                    ->alignCenter(),
 
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('')
+                    ->tooltip('Rediģēt'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

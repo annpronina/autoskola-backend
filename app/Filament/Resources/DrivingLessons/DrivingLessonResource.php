@@ -22,6 +22,10 @@ class DrivingLessonResource extends Resource
     protected static string|BackedEnum|null $activeNavigationIcon = Heroicon::CalendarDays;
 
     protected static ?string $navigationLabel = 'Braukšanas nodarbības';
+    protected static ?string $modelLabel = 'braukšanas nodarbība';
+    protected static ?string $pluralModelLabel = 'Braukšanas nodarbības';
+
+    protected static bool $hasTitleCaseModelLabel = false;
 
     protected static ?int $navigationSort = 3;
 

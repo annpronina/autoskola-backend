@@ -14,7 +14,6 @@ class ListDrivingInstructors extends ListRecords
     {
         return [
             CreateAction::make()
-                ->label('Jauns braukšanas instruktors'),
         ];
     }
 }

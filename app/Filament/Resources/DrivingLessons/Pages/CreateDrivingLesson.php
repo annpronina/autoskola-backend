@@ -13,4 +13,14 @@ class CreateDrivingLesson extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    public function getBreadcrumb(): string
+    {
+        return 'Jauna';
+    }
+
+    public function getTitle(): string
+    {
+        return 'Jauna braukšanas nodarbība';
+    }
 }

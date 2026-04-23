@@ -16,4 +16,15 @@ class EditDrivingLesson extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    public function getTitle(): string
+    {
+        return 'Rediģēt braukšanas nodarbību';
+    }
+
 }
