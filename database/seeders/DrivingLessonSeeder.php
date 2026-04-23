@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,6 +20,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 1,
                 'driving_instructor_id' => 1,
                 'category_id' => 6,
+                'status_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -31,6 +31,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 2,
                 'driving_instructor_id' => 1,
                 'category_id' => 7,
+                'status_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -41,6 +42,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 3,
                 'driving_instructor_id' => 2,
                 'category_id' => 1,
+                'status_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -51,6 +53,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 4,
                 'driving_instructor_id' => 2,
                 'category_id' => 4,
+                'status_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -61,6 +64,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 5,
                 'driving_instructor_id' => 3,
                 'category_id' => 5,
+                'status_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -71,6 +75,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 6,
                 'driving_instructor_id' => 3,
                 'category_id' => 6,
+                'status_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -81,6 +86,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 7,
                 'driving_instructor_id' => 4,
                 'category_id' => 1,
+                'status_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -91,6 +97,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 8,
                 'driving_instructor_id' => 4,
                 'category_id' => 3,
+                'status_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -101,6 +108,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 9,
                 'driving_instructor_id' => 5,
                 'category_id' => 6,
+                'status_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -111,6 +119,7 @@ class DrivingLessonSeeder extends Seeder
                 'student_id' => 10,
                 'driving_instructor_id' => 5,
                 'category_id' => 7,
+                'status_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
