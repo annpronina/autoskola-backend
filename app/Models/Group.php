@@ -40,4 +40,8 @@ class Group extends Model
     public function theoryLessons() {
         return $this->hasMany(TheoryLesson::class);
     }
+
+    public function getFullDateAttribute(): string {
+        return "{$this->start_date} {$this->end_date}";
+    }
 }

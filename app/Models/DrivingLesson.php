@@ -40,4 +40,8 @@ class DrivingLesson extends Model
     public function vehicle() {
         return $this->belongsTo(Vehicle::class);
     }
+
+    public function getFullTimeAttribute(): string {
+        return "{$this->start_time} {$this->end_time}";
+    }
 }

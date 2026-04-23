@@ -26,13 +26,13 @@ class GroupsTable
 
                 TextColumn::make('start_date')
                     ->label('Sākuma datums')
-                    ->date('d/m/Y')
+                    ->date('d.m.Y')
                     ->sortable()
                     ->alignCenter(),
 
                 TextColumn::make('end_date')
                     ->label('Beigu datums')
-                    ->date('d/m/Y')
+                    ->date('d.m.Y')
                     ->sortable()
                     ->alignCenter(),
 
