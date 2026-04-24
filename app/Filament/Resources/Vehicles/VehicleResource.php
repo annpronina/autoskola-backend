@@ -24,6 +24,10 @@ class VehicleResource extends Resource
     protected static ?string $recordTitleAttribute = 'model';
 
     protected static ?string $navigationLabel = 'Transportlīdzekļi';
+    protected static ?string $modelLabel = 'transportlīdzeklis';
+    protected static ?string $pluralModelLabel = 'Transportlīdzekļi';
+
+    protected static bool $hasTitleCaseModelLabel = false;
 
     protected static ?int $navigationSort = 1;
 

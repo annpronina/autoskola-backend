@@ -14,45 +14,77 @@ class VehiclesTable
     {
         return $table
             ->columns([
-                TextColumn::make('type')
+                TextColumn::make('vehicleType.type')
                     ->label('Transportlīdzekļa tips')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ->alignCenter(),
 
                 TextColumn::make('brand')
-                    ->searchable(),
+                    ->label('Marka')
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('model')
-                    ->searchable(),
+                    ->label('Modelis')
+                    ->searchable()
+                    ->alignCenter(),
 
                 TextColumn::make('year')
+                    ->label('Gads')
+                    
+                    ->sortable()
+                    ->alignCenter(),
+
+                TextColumn::make('vehicleTransmission.transmission') 
+                    ->label('Transmisija') 
+                    ->searchable() 
+                    ->sortable() 
+                    ->alignCenter() 
+                    ->placeholder('Nav norādīts'),
+
+                TextColumn::make('vehicleFuelType.fuel_type') 
+                    ->label('Degviela')
+                    ->searchable()
+                    ->sortable() 
+                    ->alignCenter() 
+                    ->placeholder('Nav norādīts'),
+
+                TextColumn::make('number_plate')
+                    ->label('Numura zīme')
+                    ->searchable()
+                    ->alignCenter()
+                    ->badge()
+                    ->color('info'),
+
+                TextColumn::make('category.name')
+                    ->label('Kategorija')
                     ->numeric()
-                    ->sortable(),
-
-                TextColumn::make('transmission')
-                    ->searchable(),
-
-                TextColumn::make('fuel_type')
-                    ->searchable(),
-
-                TextColumn::make('category_id')
-                    ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->alignCenter()
+                    ->badge(),
 
                 TextColumn::make('created_at')
+                    ->label('Izveidots')
                     ->dateTime()
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
+                    ->label('Atjaunināts')
                     ->dateTime()
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('')
+                    ->tooltip('Rediģēt'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

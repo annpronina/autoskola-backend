@@ -16,4 +16,14 @@ class EditVehicle extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    public function getTitle(): string
+    {      
+     return "Rediģēt {$this->record->full_name}";
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

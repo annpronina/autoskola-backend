@@ -19,7 +19,7 @@ class CreateTheoryLesson extends CreateRecord
         return 'Jauna';
     }
 
-      public function getTitle(): string
+    public function getTitle(): string
     {
         return 'Jauna teorijas nodarbība';
     }
