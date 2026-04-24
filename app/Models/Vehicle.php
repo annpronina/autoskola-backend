@@ -13,13 +13,13 @@ use App\Models\DrivingInstructor;
 class Vehicle extends Model
 {
     protected $fillable = [
-        'type', 
+        'vehicle_type_id', 
         'brand',
         'model',
         'number_plate',
         'year',
-        'transmission', 
-        'fuel_type',    
+        'vehicle_transmission_id', 
+        'vehicle_fuel_type_id',    
         'category_id'
     ];  
 
@@ -48,6 +48,6 @@ class Vehicle extends Model
     }
 
     public function getFullNameAttribute(): string {
-        return "{$this->brand} {$this->model} ({$this->number_plate})";
+        return "{$this->brand} {$this->model} ({$this->year})";
     }
 }

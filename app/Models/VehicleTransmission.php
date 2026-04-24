@@ -7,6 +7,8 @@ use App\Models\Vehicle;
 
 class VehicleTransmission extends Model
 {
+    protected $table = 'vehicle_transmission';
+    
     public function vehicle() {
         return $this->hasMany(Vehicle::class);
     }
