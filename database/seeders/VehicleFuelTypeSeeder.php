@@ -14,9 +14,9 @@ class VehicleFuelTypeSeeder extends Seeder
     public function run(): void
     {
         DB::table('vehicle_fuel_type')->upsert([
-            ['fuel_type' => 'Diesel'],
-            ['fuel_type' => 'Petrol'],
-            ['fuel_type' => 'Electric']
+            ['fuel_type' => 'Dīzelis'],
+            ['fuel_type' => 'Benzīns'],
+            ['fuel_type' => 'Elektro']
         ], ['fuel_type']);
     }
 }
