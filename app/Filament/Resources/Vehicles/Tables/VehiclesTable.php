@@ -66,14 +66,14 @@ class VehiclesTable
 
                 TextColumn::make('created_at')
                     ->label('Izveidots')
-                    ->dateTime()
+                    ->dateTime('d.m.Y H:')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
                     ->label('Atjaunināts')
-                    ->dateTime()
+                    ->dateTime('d.m.Y H:')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),

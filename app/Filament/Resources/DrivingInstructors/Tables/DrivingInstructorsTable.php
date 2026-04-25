@@ -53,13 +53,17 @@ class DrivingInstructorsTable
                     ->badge(),
 
                 TextColumn::make('created_at')
+                    ->label('Izveidots')
                     ->dateTime('d.m.Y H:i')
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Atjaunināts')
+                    ->dateTime('d.m.Y H:i')
                     ->sortable()
+                    ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([

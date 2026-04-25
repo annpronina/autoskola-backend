@@ -62,13 +62,15 @@ class DrivingLessonsTable
                     ->alignCenter(),
 
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Izveidots')
+                    ->dateTime('d.m.Y H:i')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Atjaunināts')
+                    ->dateTime('d.m.Y H:i')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),

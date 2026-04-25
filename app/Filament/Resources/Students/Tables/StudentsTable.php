@@ -8,8 +8,6 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-use function Symfony\Component\Translation\t;
-
 class StudentsTable
 {
     public static function configure(Table $table): Table
@@ -54,14 +52,16 @@ class StudentsTable
                     ->badge()
                     ->color('info'),
 
-                TextColumn::make('created_at')
+                TextColumn::make('created_at')  
+                    ->label('Izveidots')
                     ->dateTime('d.m.Y H:i')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Atjaunināts')
+                    ->dateTime('d.m.Y H:i')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
