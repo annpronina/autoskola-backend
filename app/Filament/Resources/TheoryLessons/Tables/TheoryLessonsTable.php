@@ -26,13 +26,13 @@ class TheoryLessonsTable
 
                 TextColumn::make('starts_at')
                     ->label('Sākums')
-                    ->dateTime('H:i / d.m.Y')
+                    ->dateTime('d.m.Y / H:i')
                     ->alignCenter()
                     ->sortable(),
 
                 TextColumn::make('ends_at')
                     ->label('Beigas')
-                    ->dateTime('H:i / d.m.Y')
+                    ->dateTime('d.m.Y / H:i')
                     ->alignCenter()
                     ->sortable(),
                     
@@ -40,7 +40,7 @@ class TheoryLessonsTable
                     ->label('Nodarbības kārtas nr.')
                     ->numeric()
                     ->alignCenter()
-                    ->getStateUsing(fn ($record) => "{$record->lesson_number}.nod. / {$record->group?->lesson_count}.nod")
+                    ->getStateUsing(fn ($record) => "{$record->lesson_number} / {$record->group?->lesson_count}")
                     ->sortable(),
 
                 TextColumn::make('group.category.name')
