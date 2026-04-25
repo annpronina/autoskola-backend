@@ -38,9 +38,11 @@ class TheoryLessonForm
                         TextInput::make('lesson_number')
                             ->label('Nodarbības kārtas numurs')
                             ->numeric()
+                            ->unique(ignoreRecord: true)
                             ->placeholder('Ievadiet nodarbības kārtas numuru')
                             ->validationMessages([
                                 'required' => 'Lūdzu, ievadiet nodarbības kārtas numuru.',
+                                'unique' => 'Šāds nodarbības numurs šai grupai jau eksistē.',
                                 'numeric' => 'Nodarbības numuram jābūt skaitlim.',
                             ])
                             ->required()
@@ -55,13 +57,14 @@ class TheoryLessonForm
                         ->collapsible()
                         ->columnSpanFull(),
 
-                Section::make('Pamata informācija')
-                    ->description('Informācija par teorijas nodarbību')
+                Section::make('Nodarbības informācija')
+                    ->description('Teorijas nodarbības laiks un datums')
                     ->columns(2)
                     ->schema([
                         DateTimePicker::make('starts_at')
                             ->label('Nodarbības sākums')
                             ->seconds(false)
+                            ->native(false)
                             ->placeholder('Izvēlieties sākuma datumu un laiku')
                             ->validationMessages([
                                 'required' => 'Lūdzu, izvēlieties sākuma laiku.',
@@ -71,7 +74,9 @@ class TheoryLessonForm
                         DateTimePicker::make('ends_at')
                             ->label('Nodarbības beigas')
                             ->seconds(false)
+                            ->native(false)
                             ->after('starts_at')
+                            ->placeholder('Izvēlieties beigu datumu un laiku')
                             ->validationMessages([
                                 'required' => 'Lūdzu, izvēlieties beigu laiku.',
                                 'after' => 'Beigu laikam jābūt pēc sākuma laika.'
