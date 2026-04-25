@@ -15,8 +15,8 @@ class DrivingLesson extends Model
         'student_id',
         'driving_instructor_id',
         'date',
-        'start_time',
-        'end_time',
+        'starts_at',
+        'ends_at',
         'status_id',
         'category_id'
     ];
@@ -39,9 +39,5 @@ class DrivingLesson extends Model
 
     public function vehicle() {
         return $this->belongsTo(Vehicle::class);
-    }
-
-    public function getFullTimeAttribute(): string {
-        return "{$this->start_time} {$this->end_time}";
     }
 }

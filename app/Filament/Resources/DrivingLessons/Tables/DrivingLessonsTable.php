@@ -8,21 +8,22 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
+
 class DrivingLessonsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('date')
-                    ->label('Datums')
-                    ->date('d.m.Y')
+                TextColumn::make('starts_at')
+                    ->label('Sākums')
+                    ->dateTime('d.m.Y / H:i')
                     ->alignCenter()
                     ->sortable(),
 
-                TextColumn::make('full_time')
-                    ->label('Laiks')
-                    ->getStateUsing(fn ($record) => "{$record->start_time} - {$record->end_time}")
+                TextColumn::make('ends_at')
+                    ->label('Beigas')
+                    ->dateTime('d.m.Y / H:i')
                     ->alignCenter()
                     ->sortable(),
 

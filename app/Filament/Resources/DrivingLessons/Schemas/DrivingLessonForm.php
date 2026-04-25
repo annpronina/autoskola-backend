@@ -2,9 +2,8 @@
 
 namespace App\Filament\Resources\DrivingLessons\Schemas;
 
-use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Components\ToggleButtons;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -88,7 +87,7 @@ class DrivingLessonForm
                     ->description('Braukšanas nodarbības laiks un datums')
                     ->columns(2)
                     ->schema([
-                        TimePicker::make('start_time')
+                        DateTimePicker::make('starts_at')
                             ->label('Sākuma laiks')
                             ->format('H:i')
                             ->native(false)
@@ -99,7 +98,7 @@ class DrivingLessonForm
                             ])
                             ->required(),
 
-                        TimePicker::make('end_time')
+                        DateTimePicker::make('ends_at')
                             ->label('Beigu laiks')
                             ->format('H:i')
                             ->native(false)
@@ -110,17 +109,7 @@ class DrivingLessonForm
                                 'required' => 'Lūdzu, izvēlieties beigu laiku.',
                                 'after' => 'Beigu laikam jābūt pēc sākuma laika.',
                             ])
-                            ->required(),
-
-                        DatePicker::make('date')
-                            ->label('Datums')
-                            ->native(false)
-                            ->displayFormat('d.m.Y')
-                            ->placeholder('Izvēlieties datumu')
-                            ->validationMessages([
-                                'required' => 'Lūdzu, izvēlieties datumu.',
-                            ])
-                            ->required(),
+                            ->required()
                         ])
                         ->collapsible()
                         ->columnSpanFull(),

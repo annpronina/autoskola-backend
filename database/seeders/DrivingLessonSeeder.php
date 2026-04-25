@@ -14,9 +14,8 @@ class DrivingLessonSeeder extends Seeder
     {
         DB::table('driving_lessons')->upsert([
             [
-                'date' => '2026-04-15',
-                'start_time' => '09:00',
-                'end_time' => '10:00',
+                'starts_at' => '2026-04-15 09:00',
+                'ends_at' => '2026-04-15 10:00',
                 'student_id' => 1,
                 'driving_instructor_id' => 1,
                 'category_id' => 6,
@@ -25,9 +24,9 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-15',
-                'start_time' => '10:00',
-                'end_time' => '11:00',
+                
+                'starts_at' => '2026-04-15 10:00',
+                'ends_at' => '2026-04-15 11:00',
                 'student_id' => 2,
                 'driving_instructor_id' => 1,
                 'category_id' => 7,
@@ -36,9 +35,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-16',
-                'start_time' => '11:00',
-                'end_time' => '12:00',
+                'starts_at' => '2026-04-16 11:00',
+                'ends_at' => '2026-04-16 12:00',
                 'student_id' => 3,
                 'driving_instructor_id' => 2,
                 'category_id' => 1,
@@ -47,9 +45,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-16',
-                'start_time' => '12:00',
-                'end_time' => '13:00',
+                'starts_at' => '2026-04-16 12:00',
+                'ends_at' => '2026-04-16 13:00',
                 'student_id' => 4,
                 'driving_instructor_id' => 2,
                 'category_id' => 4,
@@ -58,9 +55,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-17',
-                'start_time' => '14:00',
-                'end_time' => '15:00',
+                'starts_at' => '2026-04-17 14:00',
+                'ends_at' => '2026-04-17 15:00',
                 'student_id' => 5,
                 'driving_instructor_id' => 3,
                 'category_id' => 5,
@@ -69,9 +65,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-17',
-                'start_time' => '15:00',
-                'end_time' => '16:00',
+                'starts_at' => '2026-04-17 15:00',
+                'ends_at' => '2026-04-17 16:00',
                 'student_id' => 6,
                 'driving_instructor_id' => 3,
                 'category_id' => 6,
@@ -80,9 +75,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-18',
-                'start_time' => '16:00',
-                'end_time' => '17:00',
+                'starts_at' => '2026-04-18 16:00',
+                'ends_at' => '2026-04-18 17:00',
                 'student_id' => 7,
                 'driving_instructor_id' => 4,
                 'category_id' => 1,
@@ -91,9 +85,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-18',
-                'start_time' => '17:00',
-                'end_time' => '18:00',
+                'starts_at' => '2026-04-18 17:00',
+                'ends_at' => '2026-04-18 18:00',
                 'student_id' => 8,
                 'driving_instructor_id' => 4,
                 'category_id' => 3,
@@ -102,9 +95,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-19',
-                'start_time' => '09:00',
-                'end_time' => '10:00',
+                'starts_at' => '2026-04-19 09:00',
+                'ends_at' => '2026-04-19 10:00',
                 'student_id' => 9,
                 'driving_instructor_id' => 5,
                 'category_id' => 6,
@@ -113,9 +105,8 @@ class DrivingLessonSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'date' => '2026-04-19',
-                'start_time' => '10:00',
-                'end_time' => '11:00',
+                'starts_at' => '2026-04-19 10:00',
+                'ends_at' => '2026-04-19 11:00',
                 'student_id' => 10,
                 'driving_instructor_id' => 5,
                 'category_id' => 7,
@@ -123,6 +114,6 @@ class DrivingLessonSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
-        ],  ['driving_instructor_id', 'date', 'start_time']);
+        ],  ['driving_instructor_id', 'starts_at', 'ends_at']);
     }
 }
