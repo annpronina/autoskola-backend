@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class StudentsTable
 {
@@ -18,7 +19,12 @@ class StudentsTable
                     ->label('Vārds, Uzvārds')
                     ->getStateUsing(fn ($record) => "{$record->name} {$record->surname}")
                     ->searchable(['name', 'surname'])
-                    ->alignCenter(),
+                    ->alignCenter()
+                    ->sortable(query: function (Builder $query, string $direction): Builder {
+                        return $query
+                            ->orderBy('name', $direction)
+                            ->orderBy('surname', $direction);
+                    }),
         
                 TextColumn::make('personal_code')
                     ->label('Personas kods')
