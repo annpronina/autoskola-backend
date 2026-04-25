@@ -16,7 +16,6 @@ class TheoryLessonsTable
             ->columns([
                 TextColumn::make('group.name')
                     ->label('Grupa')
-                    ->numeric()
                     ->alignCenter()
                     ->sortable(),
 
@@ -43,7 +42,7 @@ class TheoryLessonsTable
                     ->alignCenter()
                     ->getStateUsing(fn ($record) => "{$record->lesson_number}.nod. / {$record->group?->lesson_count}.nod")
                     ->sortable(),
-                
+
                 TextColumn::make('group.category.name')
                     ->label('Kategorija')
                     ->sortable()
@@ -51,30 +50,16 @@ class TheoryLessonsTable
                     ->badge()
                     ->alignCenter(),
 
-                TextColumn::make('group.groupStatus.name')
-                    ->label('Kategorija')
-                    ->sortable()
-                    ->searchable()
-                    ->badge()
-                    ->alignCenter()
-                    ->color(fn ($record) => match ($record->group->status_id) {
-                        1 => 'info',
-                        2 => 'warning',
-                        3 => 'success',
-                        4 => 'danger',
-                        default => 'gray',
-                    }),
-
                 TextColumn::make('created_at')
                     ->label('Izveidots')
-                    ->dateTime()
+                    ->dateTime('d.m.Y H:i')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
                     ->label('Atjaunināts')
-                    ->dateTime()
+                    ->dateTime('d.m.Y H:i')
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
