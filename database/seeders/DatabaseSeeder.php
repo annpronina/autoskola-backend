@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             VehicleTransmissionSeeder::class,
             VehicleTypeSeeder::class,
             VehicleSeeder::class,
-            TheoryLessonSeeder::class
+            TheoryLessonSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
