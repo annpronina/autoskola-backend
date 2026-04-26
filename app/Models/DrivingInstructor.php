@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\DrivingLesson;
 use App\Models\Vehicle;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class DrivingInstructor extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         // Personas informācija
         'name',

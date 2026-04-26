@@ -8,9 +8,12 @@ use App\Models\Category;
 use App\Models\TheoryTeacher;
 use App\Models\GroupStatus;
 use App\Models\TheoryLesson;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Group extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         'name',
         'start_date',

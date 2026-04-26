@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Vehicle;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class VehicleType extends Model
 {
-    public function vehicle() {
+    use HasFactory;
+
+    public function vehicles() {
         return $this->hasMany(Vehicle::class);
     }
 }

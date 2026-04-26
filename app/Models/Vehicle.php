@@ -9,9 +9,12 @@ use App\Models\VehicleType;
 use App\Models\VehicleFuelType;
 use App\Models\VehicleTransmission;
 use App\Models\DrivingInstructor;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Vehicle extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'vehicle_type_id', 
         'brand',

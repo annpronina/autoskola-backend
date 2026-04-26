@@ -9,9 +9,12 @@ use App\Models\TheoryTeacher;
 use App\Models\Group;
 use App\Models\DrivingLesson;
 use App\Models\Vehicle;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         'name',
         'description'

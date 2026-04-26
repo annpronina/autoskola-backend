@@ -8,9 +8,12 @@ use App\Models\DrivingInstructor;
 use App\Models\Category;
 use App\Models\DrivingLessonStatus;
 use App\Models\Vehicle;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class DrivingLesson extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         'student_id',
         'driving_instructor_id',
