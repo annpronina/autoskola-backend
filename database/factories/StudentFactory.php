@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -24,7 +23,7 @@ class StudentFactory extends Factory
             'personal_code' => $this->faker->unique()->numerify('######-#####'),
             'address' => $this->faker->address(),
             'phone' => $this->faker->phoneNumber(),
-            'category_id' => Category::factory()
+            'email' => $this->faker->safeEmail()
         ];
     }
 }

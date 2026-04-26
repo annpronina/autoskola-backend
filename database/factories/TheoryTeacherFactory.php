@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
 use App\Models\TheoryTeacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -26,8 +25,7 @@ class TheoryTeacherFactory extends Factory
             'address' => $this->faker->address(),
             'phone' => $this->faker->phoneNumber(),
             'registered_since' => $this->faker->year(),
-            'description' => $this->faker->sentence(8),
-            'category_id' => Category::factory()
+            'description' => $this->faker->sentence(8)
         ];
     }
 }
