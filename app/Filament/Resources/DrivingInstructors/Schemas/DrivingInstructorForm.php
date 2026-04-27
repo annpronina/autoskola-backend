@@ -18,7 +18,7 @@ class DrivingInstructorForm
         return $schema
             ->components([
                 Section::make('Personas informācija')
-                    ->description('Braukšanas instruktora pamainformācija un kontaktinformācija')
+                    ->description('Braukšanas instruktora pamatinformācija un kontaktinformācija')//typo
                     ->columns(2)
                     ->schema([
                         TextInput::make('name')

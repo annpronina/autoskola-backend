@@ -18,7 +18,7 @@ class DrivingLessonForm
         return $schema
             ->components([
                 Section::make('Pamata informācija')
-                    ->description('Informācija par braukšanas nodarbību')
+                    ->description('Pamatinformācija par braukšanas nodarbību')
                     ->columns(2)
                     ->schema([
                         Select::make('category_id')

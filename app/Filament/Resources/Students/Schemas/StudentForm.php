@@ -18,7 +18,7 @@ class StudentForm
         return $schema
             ->components([
                 Section::make('Personas informācija')
-                    ->description('Kursanta pamainformācija un kontaktinformācija')
+                    ->description('Kursanta pamatinformācija un kontaktinformācija')
                     ->columns(2)
                     ->schema([
                         TextInput::make('name')

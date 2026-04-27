@@ -20,7 +20,7 @@ class GroupForm
         return $schema
             ->components([
                  Section::make('Pamata informācija')
-                    ->description('Informācija par grupu')
+                    ->description('Pamatinformācija par grupu')
                     ->columns(2)
                     ->schema([
                         TextInput::make('name')

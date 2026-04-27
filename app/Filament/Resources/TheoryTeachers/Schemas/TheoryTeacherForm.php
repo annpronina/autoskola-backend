@@ -17,7 +17,7 @@ class TheoryTeacherForm
         return $schema
             ->components([
                 Section::make('Personas informācija')
-                    ->description('Teorijas pasniedzēja pamainformācija un kontaktinformācija')
+                    ->description('Teorijas pasniedzēja pamatinformācija un kontaktinformācija')
                     ->columns(2)
                     ->schema([
                         TextInput::make('name')

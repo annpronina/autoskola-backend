@@ -20,7 +20,7 @@ class TheoryLessonForm
         return $schema
             ->components([
                 Section::make('Pamata informācija')
-                    ->description('Informācija par teorijas nodarbību')
+                    ->description('Pamatinformācija par teorijas nodarbību')
                     ->columns(2)
                     ->schema([
                         Select::make('group_id')
