@@ -18,9 +18,7 @@ class LatestGroups extends TableWidget
     {
         return $table
             ->query(
-                Group::orderBy('created_at', 'desc')
-                    ->limit(5)
-            )
+                Group::query()->orderByDesc('created_at')->limit(5))
             ->paginated(false)
             ->headerActions([
                 Action::make('view_all')

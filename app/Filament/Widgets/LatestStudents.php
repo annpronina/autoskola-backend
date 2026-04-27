@@ -18,8 +18,7 @@ class LatestStudents extends TableWidget
     {
         return $table
             ->query(
-                Student::query()->latest()->limit(5)
-            )
+                Student::query()->orderByDesc('created_at')->limit(5))
             ->paginated(false)
             ->headerActions([
                 Action::make('view_all')
