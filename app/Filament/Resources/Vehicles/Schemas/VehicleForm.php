@@ -85,7 +85,7 @@ class VehicleForm
 
                         TextInput::make('number_plate')
                             ->label('Numurzīme')
-                            ->maxLength(20)
+                            ->maxLength(7)
                             ->unique(ignoreRecord: true)
                             ->placeholder('Piemēram: AB-1234')
                             ->validationMessages([
