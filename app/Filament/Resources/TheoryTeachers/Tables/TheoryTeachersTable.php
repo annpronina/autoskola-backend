@@ -49,12 +49,14 @@ class TheoryTeachersTable
                 TextColumn::make('registered_since')
                     ->label('Pasniedz kopš')
                     ->sortable()
+                    ->searchable()
                     ->alignCenter(),
 
                 TextColumn::make('categories.name')
                     ->label('Kategorijas')
                     ->numeric()  
                     ->alignCenter()
+                    ->searchable()
                     ->badge(),
 
                 TextColumn::make('created_at')

@@ -55,6 +55,7 @@ class StudentsTable
                 TextColumn::make('group.name')
                     ->label('Grupa')
                     ->alignCenter()
+                    ->searchable()
                     ->badge()
                     ->color('info'),
 

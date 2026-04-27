@@ -60,6 +60,7 @@ class VehiclesTable
                 TextColumn::make('category.name')
                     ->label('Kategorija')
                     ->numeric()
+                    ->searchable()
                     ->sortable()
                     ->alignCenter()
                     ->badge(),

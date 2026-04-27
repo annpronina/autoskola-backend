@@ -22,6 +22,7 @@ class GroupsTable
 
                 TextColumn::make('theoryTeacher.full_name')
                     ->label('Teorijas pasniedzējs')
+                    ->searchable(['name', 'surname'])
                     ->alignCenter(),
 
                 TextColumn::make('start_date')

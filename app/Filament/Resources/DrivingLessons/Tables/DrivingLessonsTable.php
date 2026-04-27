@@ -30,11 +30,13 @@ class DrivingLessonsTable
                 TextColumn::make('drivingInstructor.full_name')
                     ->label('Braukšanas instruktors')
                     ->numeric()
+                    ->searchable(['name', 'surname'])
                     ->alignCenter(),
                     
                 TextColumn::make('student.full_name')
                     ->label('Kursants')
                     ->numeric()
+                    ->searchable(['name', 'surname'])
                     ->alignCenter(),
 
                 TextColumn::make('status_id')
@@ -53,6 +55,7 @@ class DrivingLessonsTable
                         default => 'gray',
                     })
                     ->sortable()
+                    ->searchable()
                     ->alignCenter(),
 
                 TextColumn::make('category.name')
@@ -60,6 +63,7 @@ class DrivingLessonsTable
                     ->numeric()
                     ->sortable()
                     ->badge()
+                    ->searchable()
                     ->alignCenter(),
 
                 TextColumn::make('created_at')

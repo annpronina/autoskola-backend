@@ -17,6 +17,7 @@ class TheoryLessonsTable
                 TextColumn::make('group.name')
                     ->label('Grupa')
                     ->alignCenter()
+                    ->searchable()
                     ->sortable(),
 
                 TextColumn::make('group.theoryTeacher.full_name')

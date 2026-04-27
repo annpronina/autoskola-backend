@@ -89,7 +89,6 @@ class DrivingLessonForm
                     ->schema([
                         DateTimePicker::make('starts_at')
                             ->label('Sākuma laiks')
-                            ->format('H:i')
                             ->native(false)
                             ->seconds(false)
                             ->placeholder('Izvēlieties nodarbības sākuma laiku.')
@@ -100,10 +99,9 @@ class DrivingLessonForm
 
                         DateTimePicker::make('ends_at')
                             ->label('Beigu laiks')
-                            ->format('H:i')
                             ->native(false)
                             ->seconds(false)
-                            ->after('start_time')
+                            ->after('starts_at')
                             ->placeholder('Izvēlieties nodarbības beigu laiku.')
                             ->validationMessages([
                                 'required' => 'Lūdzu, izvēlieties beigu laiku.',

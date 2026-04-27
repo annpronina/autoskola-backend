@@ -95,8 +95,7 @@ class StudentForm
                             ->label('Grupas')
                             ->relationship(
                                 name: 'group',
-                                titleAttribute: 'name',
-                                modifyQueryUsing: fn (Builder $query) => $query->where('start_date', '>', now())
+                                titleAttribute: 'name'
                             )
                             ->multiple()
                             ->columns(2)

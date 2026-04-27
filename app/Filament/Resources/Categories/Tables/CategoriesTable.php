@@ -39,7 +39,6 @@ class CategoriesTable
                 TextColumn::make('updated_at')
                     ->label('Atjaunināts')
                     ->dateTime('d.m.Y H:i')
-                    ->dateTime()
                     ->sortable()
                     ->alignCenter()
                     ->toggleable(isToggledHiddenByDefault: true),
