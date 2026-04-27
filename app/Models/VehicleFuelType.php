@@ -11,6 +11,7 @@ class VehicleFuelType extends Model
     use HasFactory;
 
     protected $table = 'vehicle_fuel_type';
+    public $timestamps = false;
     
     public function vehicles() {
         return $this->hasMany(Vehicle::class);

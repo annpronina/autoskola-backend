@@ -37,7 +37,7 @@ class DrivingLesson extends Model
     }
 
     public function drivingLessonStatus() {
-        return $this->belongsTo(drivingLessonStatus::class);
+        return $this->belongsTo(DrivingLessonStatus::class);//fix typo
     }
 
     public function vehicle() {

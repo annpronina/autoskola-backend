@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class GroupStatus extends Model
 {
     use HasFactory;
+    
+    public $timestamps = false;
 
     public function groups() {
         return $this->hasMany(Group::class);

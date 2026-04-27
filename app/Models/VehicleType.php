@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class VehicleType extends Model
 {
     use HasFactory;
+    
+    public $timestamps = false;
 
     public function vehicles() {
         return $this->hasMany(Vehicle::class);
