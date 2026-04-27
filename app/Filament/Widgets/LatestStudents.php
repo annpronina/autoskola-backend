@@ -3,8 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Student;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\EditAction;
+use Filament\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
@@ -22,6 +21,13 @@ class LatestStudents extends TableWidget
                 Student::query()->latest()->limit(5)
             )
             ->paginated(false)
+            ->headerActions([
+                Action::make('view_all')
+                    ->label('Skatīt visus')
+                    ->url(fn () => route('filament.admin.resources.students.index'))
+                    ->icon('heroicon-o-arrow-right')
+                    ->color('gray'),
+            ])
             ->columns([
                 TextColumn::make('name')
                     ->label('Vārds')
