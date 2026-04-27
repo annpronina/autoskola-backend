@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\TheoryLessons\Schemas;
 
 use App\Models\Group;
+use App\Models\TheoryLesson;
 use Closure;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
@@ -10,6 +11,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
+use Illuminate\Database\Eloquent\Model;
 
 class TheoryLessonForm
 {
@@ -38,7 +40,6 @@ class TheoryLessonForm
                         TextInput::make('lesson_number')
                             ->label('Nodarbības kārtas numurs')
                             ->numeric()
-                            ->unique(ignoreRecord: true)
                             ->placeholder('Ievadiet nodarbības kārtas numuru')
                             ->validationMessages([
                                 'required' => 'Lūdzu, ievadiet nodarbības kārtas numuru.',
@@ -50,6 +51,14 @@ class TheoryLessonForm
                                 fn (Get $get): Closure => function (string $attributes, $value, Closure $fail) use ($get) {
                                     if (Group::find($get('group_id'))?->lesson_count < $value) {
                                         $fail("Pārsniedz grupas nodarbību skaitu");
+                                    }
+                                },
+                                fn (Get $get, ?Model $record): Closure => function (string $attributes, $value, Closure $fail) use ($get, $record) {
+                                    if (TheoryLesson::where('group_id', $get('group_id'))
+                                        ->where('lesson_number', $value)
+                                        ->when($record?->id, fn ($q) => $q->where('id', '!=', $record->id))
+                                        ->exists()) {
+                                        $fail("Nodarbība ar šādu kārtas numuru jau eksistē");
                                     }
                                 },
                             ])
