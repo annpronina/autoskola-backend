@@ -5,7 +5,9 @@ namespace Database\Factories;
 use App\Models\Category;
 use App\Models\DrivingInstructor;
 use App\Models\DrivingLesson;
+use App\Models\DrivingLessonStatus;
 use App\Models\Student;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,12 +23,12 @@ class DrivingLessonFactory extends Factory
     public function definition(): array
     {
         return [
+            'status_id' => DrivingLessonStatus::factory(),
             'student_id' => Student::factory(),
             'driving_instructor_id' => DrivingInstructor::factory(),
             'category_id' => Category::factory(),
-            'date' => $this->faker->date(),
-            'start_time' => $this->faker->time(),
-            'end_time' => $this->faker->time()
+            'starts_at' => Carbon::now(),
+            'ends_at' => Carbon::now()->addHour()
         ];
     }
 }

@@ -29,7 +29,7 @@ class VehicleFactory extends Factory
             'number_plate' => strtoupper($this->faker->bothify('??-####')),
             'year' => $this->faker->numberBetween(1980, 2026),
             'vehicle_transmission_id' => VehicleTransmission::factory(),
-            'vehicle_fuel_type' => VehicleFuelType::factory(),
+            'vehicle_fuel_type_id' => VehicleFuelType::factory(),
             'category_id' => Category::factory()
         ]; 
     }
