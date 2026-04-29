@@ -25,6 +25,7 @@ class TheoryLessonForm
                     ->schema([
                         Select::make('group_id')
                             ->label('Grupas')
+                            ->searchable()
                             ->relationship(
                                 name: 'group',
                                 titleAttribute: 'name'

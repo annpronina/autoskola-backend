@@ -47,6 +47,7 @@ class DrivingLessonForm
                         Select::make('student_id')
                             ->label('Kursants')
                             ->native(false)
+                            ->searchable(['name', 'surname'])
                             ->relationship(
                                 name: 'student',
                                 modifyQueryUsing: fn (Builder $query) => $query->orderBy('name')->orderBy('surname'))
