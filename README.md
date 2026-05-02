@@ -23,30 +23,30 @@ Lai nodrošinātu sistēmas darbību lokālajā vidē, nepieciešamas šādas te
 - **Composer -** v2.7+ <br>
 - **PHP paplašinājumi -** `sodium`, `sqlite`, `xsl`
 
-# Instalācija un palaišana
-## 1. Klonēt repozitoriju no GitHub pārvaldnieka
+## Instalācija un palaišana
+###  1. Klonēt repozitoriju no GitHub pārvaldnieka
 
 ```bash
 git clone https://github.com/annpronina/autoskola-backend
 ```
 
-## 2. Pāriet uz projekta direktoriju
+### 2. Pāriet uz projekta direktoriju
 ```bash
 cd autoskola-backend
 ```
 
-## 3. Instalēt projekta atkarības
+###  3. Instalēt projekta atkarības
 
 ```bash
 composer install
 ```
 
-## 4. Izveidot vides konfigurācijas (.env) failu
+### 4. Izveidot vides konfigurācijas (.env) failu
 ```bash
 cp .env.example .env
 ```
 
-## 5. Ģenerēt lietotnes šifrēšanas atslēgu
+### 5. Ģenerēt lietotnes šifrēšanas atslēgu
 ```bash
 php artisan key:generate
 ```
@@ -56,11 +56,11 @@ php artisan key:generate
 ```bash
 php artisan db --seed
 ```
-## Lokāla servera palaišana
+### Lokāla servera palaišana
 ```bash
 php artisan serve
 ```
-## Testēšana
+### Testēšana
 
 Lai palaistu testus:
 
@@ -68,13 +68,13 @@ Lai palaistu testus:
 php artisan test
 ```
 
-## Piekļuve adminstrācija panelim
+### Piekļuve adminstrācija panelim
 Pēc servera palaišanas administrācijas panelis pieejams:
 ```bash
 http://127.0.0.1:8000/admin
 ```
 
-## Pieteikšanas sistēmā
+### Pieteikšanas sistēmā
 Autorizēties sistēmā iespējams, izmantojot šos pieteikšanas datus:
 - E-pasta adrese: admin@example.com;
 - Parole: password
@@ -95,7 +95,7 @@ Autorizēties sistēmā iespējams, izmantojot šos pieteikšanas datus:
 |**Kategorijas** | Braukšanas kategoriju (A, AM, A1, A2, ADR, B, BE) parvaldība |
 
 ---
-# Sistēmas struktūra
+## Sistēmas struktūra
 ```
 autoskola-backend/
 ├── app/
