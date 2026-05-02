@@ -1,58 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Autoskolas administrācijas sistēma
+Autoskolas administrācijas sistēmas ir tīmekļa lietojumprogramma, kas izstrādāta, izmantojot **Laravel** ietvaru ar **Filament** administrācijas paneļa ietvaru. <br>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Par projektu
+Autoskolas administrācijas sistēma ir risinājums, kas paredzēts autoskolas iekšējai lietošanai. Sistēma centralizē un atvieglo ikdienas administratīvos procesus - kursantu reģistrāciju, grupu pārvaldību, nodarbību plānošanu un instruktoru uzskaiti, uzlabojot datu pārskatāmību, ietaupot laiku, samazinot manuālu darbu un kļūdu risku. <br>
+Sistēma izstrādāta ar mērogojamību prātā un kalpo arī kā pamats turpmākai sistēmas paplašināšanai, piemēram pieteikumu sistēmai vai publiskās mājaslapas integrācijai.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Izmantotās tehnoloģijas 
+![PHP](https://img.shields.io/badge/PHP-8.3+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Filament](https://img.shields.io/badge/Filament-5.x-F59E0B?style=for-the-badge)
+![Composer](https://img.shields.io/badge/Composer-2.7+-885630?style=for-the-badge&logo=composer&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Pest](https://img.shields.io/badge/Pest-4.x-F23B3B?style=for-the-badge)
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Prasības
+Lai nodrošinātu sistēmas darbību lokālajā vidē, nepieciešamas šādas tehnoloģijas:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **PHP -** v8.3+ <br>
+- **Composer -** v2.7+ <br>
+- **PHP paplašinājumi -** `sodium`, `sqlite`, `xsl`
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+# Instalācija un palaišana
+## 1. Klonēt repozitoriju no GitHub pārvaldnieka
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/annpronina/autoskola-backend
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## 2. Pāriet uz projekta direktoriju
+```bash
+cd autoskola-backend
+```
 
-## Contributing
+## 3. Instalēt projekta atkarības
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+## 4. Izveidot vides konfigurācijas (.env) failu
+```bash
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 5. Ģenerēt lietotnes šifrēšanas atslēgu
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+## Migrācijas un datu sagatavošana
+### Kad `.env` fails ir konfigurēts, nepieciešams izveidot datubāzes tabulas un aizpildīt tos ar sākotnējiem datiem:
+```bash
+php artisan db --seed
+```
+## Lokāla servera palaišana
+```bash
+php artisan serve
+```
+## Testēšana
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Lai palaistu testus:
 
-## License
+```bash
+php artisan test
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Piekļuve adminstrācija panelim
+Pēc servera palaišanas administrācijas panelis pieejams:
+```bash
+http://127.0.0.1:8000/admin
+```
+
+## Pieteikšanas sistēmā
+Autorizēties sistēmā iespējams, izmantojot šos pieteikšanas datus:
+- E-pasta adrese: admin@example.com;
+- Parole: password
+---
+
+## Funkcionalitāte
+
+| Modulis | Apraksts |
+|---|---|
+|**Sākuma lapa** | Pārskats par jaunākajiem kursantiem, grupām un nodarbībām |
+|**Kursanti** | Reģistrācija, personas dati, piesaiste grupām un kategorijām |
+|**Grupas** | Teorijas grupu izveide, statusa pārvaldība, nodarbību skaita kontrole |
+|**Teorijas nodarbības** | Nodarbību plānošana ar kārtas numuru un laika intervālu |
+|**Braukšanas nodarbības** | Nodarbību grafiks, instruktora un kursanta piesaiste |
+|**Teorijas pasniedzēji** | Pasniedzēju reģistrs ar kategoriju piesaisti |
+|**Braukšanas instruktori** | Instruktoru pārvaldība, transportlīdzekļu un kategoriju piesaiste |
+|**Transportlīdzekļi** | Transporta reģistrs ar tehniskajiem parametriem |
+|**Kategorijas** | Braukšanas kategoriju (A, AM, A1, A2, ADR, B, BE) parvaldība |
+
+---
+# Sistēmas struktūra
+```
+autoskola-backend/
+├── app/
+│   ├── Filament/          # Administrācijas paneļa resursi, lapas, formas, tabulas un logrīki
+│   └── Models/            # Eloquent modeļi
+├── database/
+│   ├── factories/         # Modeļu rūpnīcas testa datiem
+│   ├── migrations/        # Datubāzes migrācijas
+│   └── seeders/           # Sākotnējo datu seederi
+```
+
+## Autors
+Anna Proņina<br>
+Ventspils Tehnikums <br>
+PT-2022<br>
+
