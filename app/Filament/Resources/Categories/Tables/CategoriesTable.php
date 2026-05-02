@@ -24,11 +24,6 @@ class CategoriesTable
                         ->counts('groups')
                         ->alignCenter(),
 
-                TextColumn::make('students_count')
-                        ->label('Kursanti')
-                        ->counts('students')
-                        ->alignCenter(),
-
                 TextColumn::make('created_at')
                     ->label('Izveidots')
                     ->dateTime('d.m.Y H:i')

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Student;
 use App\Models\DrivingInstructor;
 use App\Models\TheoryTeacher;
 use App\Models\Group;
