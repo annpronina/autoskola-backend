@@ -94,7 +94,7 @@ class StudentForm
                         Select::make('groups')
                             ->label('Grupas')
                             ->relationship(
-                                name: 'group',
+                                name: 'groups',
                                 titleAttribute: 'name'
                             )
                             ->multiple()
@@ -104,17 +104,6 @@ class StudentForm
                                 'required' => 'Lūdzu, izvēlieties vismaz vienu grupu.',
                             ])
                             ->columnSpanFull()
-                            ->required(),
-
-                        CheckboxList::make('categories')
-                            ->label('Kategorijas')
-                            ->relationship(name: 'categories', titleAttribute: 'name')
-                            ->columns(4)
-                            ->columnSpanFull()
-                            ->gridDirection(GridDirection::Row)
-                            ->validationMessages([
-                                'required' => 'Lūdzu, izvēlieties vismaz vienu kategoriju.',
-                            ])
                             ->required()
                         ])
                         ->collapsible()

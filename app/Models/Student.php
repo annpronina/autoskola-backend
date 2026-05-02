@@ -21,11 +21,7 @@ class Student extends Model
         'email'
     ];
 
-    public function categories() {
-        return $this->belongsToMany(Category::class);
-    }
-
-    public function group() {
+    public function groups() {
         return $this->belongsToMany(Group::class);
     }
 

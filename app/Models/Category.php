@@ -20,10 +20,6 @@ class Category extends Model
         'description'
     ];
 
-    public function students() {
-        return $this->belongsToMany(Student::class);
-    }
-
     public function drivingInstructors() {
         return $this->belongsToMany(DrivingInstructor::class);
     }

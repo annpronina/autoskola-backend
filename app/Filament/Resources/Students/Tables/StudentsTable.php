@@ -45,14 +45,8 @@ class StudentsTable
                     ->label('Adrese')
                     ->searchable()
                     ->alignCenter(),
-
-                TextColumn::make('categories.name')
-                    ->label('Kategorijas')
-                    ->searchable()
-                    ->alignCenter()
-                    ->badge(),
                 
-                TextColumn::make('group.name')
+                TextColumn::make('groups.name')
                     ->label('Grupa')
                     ->alignCenter()
                     ->searchable()
