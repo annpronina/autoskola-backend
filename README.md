@@ -14,7 +14,6 @@ Sistēma izstrādāta ar mērogojamību prātā un kalpo arī kā pamats turpmā
 ![Composer](https://img.shields.io/badge/Composer-2.7+-885630?style=for-the-badge&logo=composer&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Pest](https://img.shields.io/badge/Pest-4.x-F23B3B?style=for-the-badge)
----
 
 ## Prasības
 Lai nodrošinātu sistēmas darbību lokālajā vidē, nepieciešamas šādas tehnoloģijas:
@@ -51,8 +50,9 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-## Migrācijas un datu sagatavošana
-### Kad `.env` fails ir konfigurēts, nepieciešams izveidot datubāzes tabulas un aizpildīt tos ar sākotnējiem datiem:
+
+# Migrācijas un datu sagatavošana
+Kad `.env` fails ir konfigurēts, nepieciešams izveidot datubāzes tabulas un aizpildīt tos ar sākotnējiem datiem:
 ```bash
 php artisan db --seed
 ```
