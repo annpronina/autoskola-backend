@@ -7,6 +7,11 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Forms\Components\DatePicker;
+use Filament\Schemas\Components\Section;
+use Filament\Tables\Filters\Filter;
+use Illuminate\Database\Eloquent\Builder;
 
 class GroupsTable
 {
@@ -81,7 +86,14 @@ class GroupsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status_id')
+                    ->options([
+                        1 => 'Plānota',
+                        2 => 'Aktīva',
+                        3 => 'Pabeigta',
+                        4 => 'Atcelta'
+                    ])
+                    ->label('Statuss')
             ])
             ->recordActions([
                 EditAction::make()
