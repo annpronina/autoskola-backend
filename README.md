@@ -51,7 +51,7 @@ php artisan key:generate
 ```
 
 
-# Migrācijas un datu sagatavošana
+## Migrācijas un datu sagatavošana
 Kad `.env` fails ir konfigurēts, nepieciešams izveidot datubāzes tabulas un aizpildīt tos ar sākotnējiem datiem:
 ```bash
 php artisan db --seed
