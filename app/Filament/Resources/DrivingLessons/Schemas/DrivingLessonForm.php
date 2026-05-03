@@ -2,10 +2,13 @@
 
 namespace App\Filament\Resources\DrivingLessons\Schemas;
 
+use App\Models\DrivingLesson;
+use Closure;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\ToggleButtons;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Database\Eloquent\Builder;
@@ -41,6 +44,18 @@ class DrivingLessonForm
                             ->placeholder('Izvēlieties instruktoru')
                             ->validationMessages([
                                 'required' => 'Lūdzu, izvēlieties braukšanas instruktoru.',
+                            ])
+                            ->rules([
+                                fn (Get $get, ?Model $record): Closure => function (string $attributes, $value, Closure $fail) use($get, $record) {
+                                    if (DrivingLesson::where('driving_instructor_id', '=', $value)
+                                        ->where('starts_at', '<', $get('ends_at'))
+                                        ->where('ends_at', '>', $get('starts_at'))
+                                        ->when($record?->id, fn ($q) => $q->where('id', '!=', $record->id))
+                                        ->exists()
+                                    ){
+                                        $fail("Instruktors šajā laika posmā ir aizņemts");
+                                    }
+                                }
                             ])
                             ->required(),
 
