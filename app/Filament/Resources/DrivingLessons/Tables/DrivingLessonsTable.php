@@ -6,8 +6,11 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-
+use Filament\Forms\Components\DatePicker;
+use Filament\Tables\Filters\Filter;
+use Illuminate\Database\Eloquent\Builder;
 
 class DrivingLessonsTable
 {
@@ -81,7 +84,39 @@ class DrivingLessonsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status_id')
+                    ->options([
+                        1 => 'Plānota',
+                        2 => 'Pabeigta',
+                        3 => 'Atcelta',
+                    ])
+                    ->label('Statuss'),
+
+                SelectFilter::make('category')
+                    ->relationship('category', 'name')
+                    ->label('Kategorija')
+                    ->native(false),
+
+                Filter::make('date')
+                ->schema([
+                    DatePicker::make('starts_at')
+                        ->label('Nodarbības sākums')
+                        ->native(false),
+                    DatePicker::make('ends_at')
+                        ->label('Nodarbības beigas')
+                        ->native(false),
+                ])
+                ->query(function (Builder $query, array $data): Builder {
+                    return $query
+                        ->when(
+                            $data['starts_at'],
+                            fn (Builder $query, $date): Builder => $query->where('starts_at', '>=', $date),
+                        )
+                        ->when(
+                            $data['ends_at'],
+                            fn (Builder $query, $date): Builder => $query->where('ends_at', '<=', explode(' ', $date)[0] . ' 23:59:59'),
+                        );
+                })
             ])
             ->recordActions([
                 EditAction::make()
