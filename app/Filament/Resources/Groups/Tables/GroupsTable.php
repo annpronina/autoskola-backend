@@ -95,6 +95,9 @@ class GroupsTable
                     ])
                     ->label('Statuss')
             ])
+            ->filtersApplyAction(
+                fn ($action) => $action->label('Lietot filtrus')
+            )
             ->recordActions([
                 EditAction::make()
                     ->label('')

@@ -118,6 +118,9 @@ class DrivingLessonsTable
                         );
                 })
             ])
+            ->filtersApplyAction(
+                fn ($action) => $action->label('Lietot filtrus')
+            )
             ->recordActions([
                 EditAction::make()
                     ->label('')
